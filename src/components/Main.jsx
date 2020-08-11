@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../style/style.css";
-import TaskList from "./TaskList.js";
-import AddTaskPopup from "./AddTaskPopup.js";
+import TaskList from "./TaskList.jsx";
+import AddTaskPopup from "./AddTaskPopup.jsx";
 
 class Main extends React.Component {
   constructor(props) {
@@ -20,10 +20,11 @@ class Main extends React.Component {
     });
   }
 
-  resetSearchBar = () =>{
-      this.setState({ searchText: "" },() => { console.log(this.state);});
-     
-  }
+  resetSearchBar = () => {
+    this.setState({ searchText: "" }, () => {
+      console.log(this.state);
+    });
+  };
 
   handleSearchChange = (event) => {
     this.setState({ searchText: event.target.value }, this.updateList);
@@ -63,7 +64,6 @@ class Main extends React.Component {
           onRemoveTask={this.props.onRemoveTask}
           onChangeTaskStatus={this.props.onChangeTaskStatus}
         />
-
         {this.state.showPopup ? (
           <AddTaskPopup
             onAddNewTask={this.props.onAddNewTask}

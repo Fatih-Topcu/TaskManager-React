@@ -1,5 +1,5 @@
 import React from "react";
-import Task from "./Task.js";
+import Task from "./Task.jsx";
 import "../style/style.css";
 
 class TaskList extends React.Component {
@@ -18,7 +18,7 @@ class TaskList extends React.Component {
                   />
                 </li>
               );
-            } 
+            }
           })}
         </ul>
       </div>

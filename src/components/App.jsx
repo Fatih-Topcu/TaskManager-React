@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Aside from "./Aside.js";
-import Main from "./Main.js";
-import Header from "./Header.js";
+import Aside from "./Aside.jsx";
+import Main from "./Main.jsx";
+import Header from "./Header.jsx";
 import "../style/style.css";
 
 class App extends React.Component {
@@ -169,21 +169,23 @@ class App extends React.Component {
     let newID = this.state.lastId;
     newID++;
     this.setState({ lastId: newID });
+    const disp = this.state.display === "done" ? false : true ;
     const newTask = {
       id: newID,
-      show: true,
+      show: disp,
       done: false,
       description: description,
     };
 
     this.setState((prevState) => ({
+      display: "all",
       tasks: [...prevState.tasks, newTask],
     }));
   };
 
- resetSearchBar = () =>{
-   this.main.resetSearchBar();
- }
+  resetSearchBar = () => {
+    this.main.resetSearchBar();
+  };
 
   render() {
     return (
@@ -194,7 +196,7 @@ class App extends React.Component {
           activeTaskCount={this.findActiveTaskCount()}
         />
         <Main
-          ref ={main => this.main = main}
+          ref={(main) => (this.main = main)}
           tasks={this.state.tasks}
           onRemoveTask={this.removeTask}
           onChangeTaskStatus={this.changeTaskStatus}

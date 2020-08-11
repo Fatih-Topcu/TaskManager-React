@@ -4,7 +4,7 @@ class AddTaskPopup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      taskDescription: '',
+      taskDescription: "",
     };
   }
 
@@ -13,18 +13,21 @@ class AddTaskPopup extends React.Component {
   };
 
   addTaskAndClose = () => {
-    if (this.state.taskDescription !== ''  && /\S/.test(this.state.taskDescription)) {
+    if (
+      this.state.taskDescription !== "" &&
+      /\S/.test(this.state.taskDescription)
+    ) {
       this.props.onAddNewTask(this.state.taskDescription);
       this.props.closePopup();
     }
   };
 
-  onEnterPressed = (event) =>{
-    if(event.keyCode == 13){
+  onEnterPressed = (event) => {
+    if (event.keyCode == 13) {
       this.addTaskAndClose();
     }
-  }
- 
+  };
+
   render() {
     return (
       <div className="popup">

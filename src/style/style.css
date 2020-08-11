@@ -127,6 +127,10 @@
   border-radius: 25%;
 }
 
+#header .header-upper #date-time-p {
+  font-size: 1rem;
+}
+
 #header .header-buttons {
   border-top: 0.5px #cacaca solid;
   border-bottom: 0.5px #cacaca solid;
@@ -151,9 +155,10 @@
       -ms-flex-pack: center;
           justify-content: center;
   border: 0.2px solid grey;
-  height: 40px;
-  width: 200px;
+  height: 4rem;
+  width: 20rem;
   cursor: pointer;
+  outline: none;
 }
 
 #header .header-buttons .header-btn i {
@@ -163,7 +168,7 @@
 #header .header-buttons .header-btn .active-circle {
   position: relative;
   top: -0.5rem;
-  left: 9rem;
+  left: 10rem;
   color: #fff;
   background-color: #ff503f;
   border-radius: 50%;

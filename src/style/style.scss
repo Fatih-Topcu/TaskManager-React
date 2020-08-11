@@ -88,6 +88,9 @@
             border: 1px #cacaca solid;
             border-radius: 25%;
         }
+        #date-time-p {
+            font-size: 1rem;
+        }
     }
     .header-buttons {
         border-top: 0.5px #cacaca solid;
@@ -100,16 +103,17 @@
             align-items: center;
             justify-content: center;
             border: 0.2px solid grey;
-            height: 40px;
-            width: 200px;
+            height: 4rem;
+            width: 20rem;
             cursor: pointer;
+            outline: none;
             i {
                 color: #cacaca;
             }
             .active-circle {
                 position: relative;
                 top: -0.5rem;
-                left: 9rem;
+                left: 10rem;
                 color: #fff;
                 background-color: #ff503f;
                 border-radius: 50%;
