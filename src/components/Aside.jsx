@@ -20,7 +20,13 @@ class Aside extends React.Component {
           <p>Ayarlar</p>
         </a>
 
-        <a href="#">
+        <a
+          href="#"
+          onClick={() => {
+            window.open("about:blank", "_self");
+            window.close();
+          }}
+        >
           <i className="large power off icon"></i>
           <p>Kapat</p>
         </a>
