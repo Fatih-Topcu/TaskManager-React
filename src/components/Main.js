@@ -20,6 +20,11 @@ class Main extends React.Component {
     });
   }
 
+  resetSearchBar = () =>{
+      this.setState({ searchText: "" },() => { console.log(this.state);});
+     
+  }
+
   handleSearchChange = (event) => {
     this.setState({ searchText: event.target.value }, this.updateList);
   };
@@ -41,6 +46,7 @@ class Main extends React.Component {
           <form className="task-search">
             <input
               type="text"
+              value={this.state.searchText}
               onChange={this.handleSearchChange}
               placeholder="Arama..."
             ></input>

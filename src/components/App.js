@@ -91,6 +91,7 @@ class App extends React.Component {
   };
 
   changeToShow = (e) => {
+    this.resetSearchBar();
     document.getElementsByClassName("selected")[0].classList.remove("selected");
     e.currentTarget.classList.add("selected");
 
@@ -180,6 +181,10 @@ class App extends React.Component {
     }));
   };
 
+ resetSearchBar = () =>{
+   this.main.resetSearchBar();
+ }
+
   render() {
     return (
       <div className="wrapper">
@@ -189,6 +194,7 @@ class App extends React.Component {
           activeTaskCount={this.findActiveTaskCount()}
         />
         <Main
+          ref ={main => this.main = main}
           tasks={this.state.tasks}
           onRemoveTask={this.removeTask}
           onChangeTaskStatus={this.changeTaskStatus}
