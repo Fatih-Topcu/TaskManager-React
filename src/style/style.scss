@@ -1,7 +1,9 @@
-/*background-color: #353a3e;*/
 
-
-/* hightlight color #ff503f*/
+$aside-dark-grey : #353a3e;
+$aside-donetask-p-grey: #9c9a9a;
+$light-grey : #cacaca;
+$orange-main: #ff503f;
+$header-background: #f1f1f1;
 
 * {
     margin: 0;
@@ -24,7 +26,7 @@
     flex-direction: column;
     align-items: center;
     grid-area: sidebar;
-    background-color: #353a3e;
+    background-color: $aside-dark-grey;
     padding-top: 2rem;
     a {
         margin-top: 2rem;
@@ -35,16 +37,16 @@
         p {
             padding: 0.5rem 0;
             font-size: 12px;
-            color: #9c9a9a;
+            color: $aside-donetask-p-grey;
         }
         i {
-            color: #9c9a9a;
+            color: $aside-donetask-p-grey;
             .active-circle {
                 position: relative;
                 top: -30px;
                 left: 20px;
-                color: #686565;
-                background-color: #cacaca;
+                color: $aside-dark-grey;
+                background-color:$light-grey;
                 border-radius: 50%;
                 font-size: 1rem;
                 padding: 0.25rem 0;
@@ -58,11 +60,11 @@
     a:hover {
         p,
         i {
-            color: #ff503f;
+            color: $orange-main;
         }
     }
     .current {
-        color: #ff503f;
+        color: $orange-main;
     }
 }
 
@@ -70,7 +72,7 @@
     display: grid;
     grid-area: header;
     grid-template-rows: 1fr 1fr;
-    background-color: #f1f1f1;
+    background-color: $header-background;
     .header-upper {
         cursor: default;
         justify-items: center;
@@ -79,13 +81,13 @@
         padding-left: 3rem;
         i {
             color: #fff;
-            background-color: #ff503f;
+            background-color: $orange-main;
         }
         p {
             font-size: 10px;
             margin: 1rem;
             padding: 0.25rem;
-            border: 1px #cacaca solid;
+            border: 1px $light-grey solid;
             border-radius: 25%;
         }
         #date-time-p {
@@ -93,8 +95,8 @@
         }
     }
     .header-buttons {
-        border-top: 0.5px #cacaca solid;
-        border-bottom: 0.5px #cacaca solid;
+        border-top: 0.5px $light-grey solid;
+        border-bottom: 0.5px $light-grey solid;
         display: flex;
         margin-top: auto;
         .header-btn {
@@ -108,14 +110,14 @@
             cursor: pointer;
             outline: none;
             i {
-                color: #cacaca;
+                color: $light-grey;
             }
             .active-circle {
                 position: relative;
                 top: -0.5rem;
                 left: 10rem;
                 color: #fff;
-                background-color: #ff503f;
+                background-color: $orange-main;
                 border-radius: 50%;
                 font-size: 1rem;
                 padding: 0.25rem;
@@ -132,7 +134,7 @@
     grid-area: main;
     margin: 1rem;
     padding: 1rem;
-    border: 1px #cacaca solid;
+    border: 1px $light-grey solid;
     .search-add {
         display: grid;
         grid-template-columns: 6fr 1fr;
@@ -144,7 +146,7 @@
                 border: none;
                 outline: none;
                 &::placeholder {
-                    color: #9c9a9a;
+                    color: $aside-donetask-p-grey;
                 }
                 &:valid {
                     color: #000000;
@@ -152,7 +154,7 @@
             }
         }
         .add-task-btn {
-            background-color: #ff503f;
+            background-color: $orange-main;
             color: #fff;
             border: none;
             border-radius: 15%;
@@ -161,7 +163,7 @@
             font-size: 12px;
             cursor: pointer;
         }
-        border-bottom: 1px #cacaca solid;
+        border-bottom: 1px $light-grey solid;
     }
     #unclamp-all-btn {
         float: right;
@@ -182,7 +184,7 @@
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px #cacaca solid;
+    border-bottom: 1px $light-grey solid;
     justify-content: center;
     form {
         input {
@@ -207,8 +209,8 @@
         margin-right: 4rem;
         &.t-true {
             font-style: italic;
-            color: #9c9a9a;
-            text-decoration: #ff503f line-through;
+            color: $aside-donetask-p-grey;
+            text-decoration: $orange-main line-through;
         }
         &.t-false {
             font-style: normal;
@@ -229,10 +231,10 @@
         border-radius: 1rem;
         margin: 0 1rem;
         i {
-            color: #cacaca;
+            color: $light-grey;
         }
         &:hover {
-            background-color: #ff503f;
+            background-color: $orange-main;
             color: #fff;
             cursor: pointer;
         }
@@ -249,10 +251,10 @@
         background: #fff;
         border-radius: 1rem;
         i {
-            color: #cacaca;
+            color: $light-grey;
         }
         &:hover {
-            background-color: #ff503f;
+            background-color: $orange-main;
             color: #fff;
             cursor: pointer;
         }
@@ -296,7 +298,7 @@
         color: #fff;
         i {
             background-color: #fff;
-            color: #ff503f;
+            color: $orange-main;
         }
         &:hover {
             cursor: pointer;
@@ -311,14 +313,14 @@
         align-content: center;
         justify-content: center;
         h3 {
-            color: #ff503f;
+            color: $orange-main;
         }
         textarea {
             padding: 1rem;
             border-radius: 1rem;
             outline: none;
             resize: none;
-            border-color: #cacaca;
+            border-color: $light-grey;
             margin: 0.25rem;
             margin-bottom: 1rem;
         }
@@ -330,7 +332,7 @@
             width: 7rem;
             border-radius: 30%;
             outline: none;
-            background-color: #ff503f;
+            background-color: $orange-main;
             color: #fff;
             border: none;
             cursor: pointer;
