@@ -19,6 +19,16 @@ class Task extends React.Component {
       }
     }
   };
+
+  clampAll = () => {
+    const el = document.getElementsByClassName("task");
+
+    for (let a = 0; a < el.length; a++) {
+      if (el[a].classList.contains("unclamped")) {
+        el[a].classList.remove("unclamped");
+      }
+    }
+  };
   render() {
     return (
       <div className="task" id={`task-${this.props.task.id}`}>

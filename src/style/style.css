@@ -252,7 +252,8 @@
   cursor: pointer;
 }
 
-#main #unclamp-all-btn {
+#main #unclamp-all-btn,
+#main #clamp-all-btn {
   float: right;
   margin-right: 1.6rem;
   margin-top: 1rem;
@@ -263,8 +264,14 @@
   cursor: pointer;
 }
 
-#main #unclamp-all-btn p {
+#main #unclamp-all-btn p,
+#main #clamp-all-btn p {
   font-size: 12px;
+}
+
+#main #unclamp-all-btn:hover,
+#main #clamp-all-btn:hover {
+  color: #000;
 }
 
 #main #remove-done-btn {
@@ -280,6 +287,11 @@
 
 #main #remove-done-btn p {
   font-size: 10px;
+}
+
+#main #remove-done-btn:hover {
+  color: #000;
+  font-size: 16px;
 }
 
 #tasklist .ul-list {

@@ -44,6 +44,10 @@ class Main extends React.Component {
     this.tasklist.task.unclampAll();
   }
 
+  clampAll = () =>{
+    this.tasklist.task.clampAll();
+  }
+
   render() {
     return (
       <div id="main">
@@ -79,6 +83,11 @@ class Main extends React.Component {
         <button onClick={this.unclampAll} id="unclamp-all-btn">
           <i className="large chevron circle down icon" />
           <p>Hepsini Aç</p>
+        </button>
+
+        <button onClick={this.clampAll} id="clamp-all-btn">
+          <i className="large chevron circle up icon" />
+          <p>Hepsini Gizle</p>
         </button>
 
         <button onClick={this.props.onRemoveDoneTasks} id="remove-done-btn">

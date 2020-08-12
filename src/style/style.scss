@@ -182,7 +182,8 @@ $header-background: #f1f1f1;
         }
         border-bottom: 1px $light-grey solid;
     }
-    #unclamp-all-btn {
+    #unclamp-all-btn,
+    #clamp-all-btn {
         float: right;
         margin-right: 1.6rem;
         margin-top: 1rem;
@@ -193,6 +194,10 @@ $header-background: #f1f1f1;
         cursor: pointer;
         p{
             font-size: 12px;
+        }
+
+        &:hover{
+            color: #000;
         }
     }
 
@@ -208,6 +213,11 @@ $header-background: #f1f1f1;
 
         p{
             font-size: 10px;
+        }
+
+        &:hover{
+            color: #000;
+            font-size: 16px;
         }
     }
 }
