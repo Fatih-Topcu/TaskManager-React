@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../style/style.css";
+import { withTranslation } from "react-i18next";
 
 class Header extends React.Component {
   constructor(props) {
@@ -19,19 +20,19 @@ class Header extends React.Component {
   }
 
   render() {
-    const curTime = new Date().toLocaleString();
+    const { t } = this.props;
     return (
       <div id="header">
         <div className="header-upper">
           <i
-          id="refresh-page-header"
+            id="refresh-page-header"
             onClick={() => {
               window.location.reload();
               return false;
             }}
             className="circular redo icon"
           ></i>
-          <p>Görev Yönetim Paneli</p>
+          <p>{t("taskmanagementpanel-text")}</p>
           <div id="date-time-p">{this.state.curTime}</div>
         </div>
 
@@ -42,7 +43,7 @@ class Header extends React.Component {
             className="header-btn selected"
           >
             <i className="large sign out alternate icon"></i>
-            <p>Tüm Görevler</p>
+            <p>{t("alltasks-text")}</p>
           </button>
           <button
             id="active-btn"
@@ -51,7 +52,7 @@ class Header extends React.Component {
           >
             <div className="active-circle">{this.props.activeTaskCount}</div>
             <i className="large clock outline icon"></i>
-            <p>Aktif Görevler</p>
+            <p>{t("activetasks-text")}</p>
           </button>
           <button
             id="done-btn"
@@ -59,7 +60,7 @@ class Header extends React.Component {
             className="header-btn"
           >
             <i className="large check circle outline icon"></i>
-            <p>Biten Görevler</p>
+            <p>{t("donetasks-text")}</p>
           </button>
         </div>
       </div>
@@ -67,4 +68,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default (withTranslation()(Header));

@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../style/style.css";
 import SettingsPopup from "./SettingsPopup";
+import { withTranslation } from "react-i18next";
+
+
 
 class Aside extends React.Component {
   constructor(props) {
@@ -18,6 +21,8 @@ class Aside extends React.Component {
   }
 
   render() {
+
+    const {t} = this.props;
     return (
       <div id="aside">
         <div className="user-image">
@@ -28,12 +33,12 @@ class Aside extends React.Component {
           <i className="big bars icon current">
             <div className="active-circle">{this.props.activeTaskCount}</div>
           </i>
-          <p>Görevler</p>
+          <p>{t("tasks-text")}</p>
         </a>
 
         <a href="#" onClick={this.togglePopup.bind(this)}>
           <i className="big cog icon"></i>
-          <p>Ayarlar</p>
+          <p>{t("settings-text")}</p>
         </a>
 
         <a
@@ -45,7 +50,7 @@ class Aside extends React.Component {
           }}
         >
           <i className="big power off icon"></i>
-          <p>Kapat</p>
+          <p>{t("close-text")}</p>
         </a>
 
         {this.state.showPopup ? (
@@ -59,4 +64,4 @@ class Aside extends React.Component {
   }
 }
 
-export default Aside;
+export default (withTranslation()(Aside));

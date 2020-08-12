@@ -143,10 +143,10 @@ class App extends React.Component {
     this.setState({ tasks: newList });
   };
 
-  removeDoneTasks = () =>{
+  removeDoneTasks = () => {
     const newList = this.state.tasks.filter((task) => task.done !== true);
     this.setState({ tasks: newList });
-  }
+  };
 
   changeTaskStatus = (id) => {
     let changed = this.state.tasks.filter((task) => task.id === id)[0];
@@ -192,7 +192,6 @@ class App extends React.Component {
     this.main.resetSearchBar();
   };
 
- 
   render() {
     return (
       <div className="wrapper">

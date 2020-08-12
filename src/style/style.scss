@@ -315,6 +315,7 @@ $header-background: #f1f1f1;
 }
 
 .popup {
+    z-index: 2;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -339,6 +340,33 @@ $header-background: #f1f1f1;
     height: 20rem;
     margin: auto;
     background: white;
+
+    #language-text{
+        justify-content: center;
+        position: absolute;
+        align-self: center;
+        top:20%;
+        font-size: 2rem;
+        color: #353a3e;
+    }
+
+    #language-flags{
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: row;   
+
+       .flag{
+        margin: 3rem;   
+        p{
+            text-align: center;
+        }
+
+        &:hover{
+            cursor: pointer;
+            
+        }
+       }
+    }
     #close-popup-btn {
         position: absolute;
         right: 2%;

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "../style/style.css";
 import TaskList from "./TaskList.jsx";
 import AddTaskPopup from "./AddTaskPopup.jsx";
+import { withTranslation } from "react-i18next";
 
 class Main extends React.Component {
   constructor(props) {
@@ -40,15 +41,16 @@ class Main extends React.Component {
     this.props.onChangeTaskShow(filtered);
   };
 
-  unclampAll = () =>{
+  unclampAll = () => {
     this.tasklist.task.unclampAll();
-  }
+  };
 
-  clampAll = () =>{
+  clampAll = () => {
     this.tasklist.task.clampAll();
-  }
+  };
 
   render() {
+    const { t } = this.props;
     return (
       <div id="main">
         <div className="search-add">
@@ -57,14 +59,14 @@ class Main extends React.Component {
               type="text"
               value={this.state.searchText}
               onChange={this.handleSearchChange}
-              placeholder="Arama..."
+              placeholder={t("search-text")}
             ></input>
           </form>
           <button
             onClick={this.togglePopup.bind(this)}
             className="add-task-btn"
           >
-            Yeni Görev Ekle +
+            {t("addnewtask-text")}
           </button>
         </div>
         <TaskList
@@ -82,19 +84,19 @@ class Main extends React.Component {
 
         <button onClick={this.unclampAll} id="unclamp-all-btn">
           <i className="large chevron circle down icon" />
-          <p>Hepsini Aç</p>
+          <p>{t("expand-text")}</p>
         </button>
 
         <button onClick={this.clampAll} id="clamp-all-btn">
           <i className="large chevron circle up icon" />
-          <p>Hepsini Gizle</p>
+          <p>{t("collapse-text")}</p>
         </button>
 
         <button onClick={this.props.onRemoveDoneTasks} id="remove-done-btn">
           <i className="large trash alternate icon" />
           <p>
-            Biten Görevleri
-            <br /> Sil
+            {t("delete-text1")}
+            <br /> {t("delete-text2")}
           </p>
         </button>
       </div>
@@ -102,4 +104,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default withTranslation(undefined, { withRef: true })(Main);
