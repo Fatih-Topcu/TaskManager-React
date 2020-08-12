@@ -24,7 +24,6 @@ class Main extends React.Component {
     this.setState({ searchText: "" }, () => {
       console.log(this.state);
     });
-    
   };
 
   handleSearchChange = (event) => {
@@ -41,8 +40,11 @@ class Main extends React.Component {
     this.props.onChangeTaskShow(filtered);
   };
 
+  unclampAll = () =>{
+    this.tasklist.task.unclampAll();
+  }
+
   render() {
-    
     return (
       <div id="main">
         <div className="search-add">
@@ -62,6 +64,7 @@ class Main extends React.Component {
           </button>
         </div>
         <TaskList
+          ref={(tasklist) => (this.tasklist = tasklist)}
           tasks={this.props.tasks}
           onRemoveTask={this.props.onRemoveTask}
           onChangeTaskStatus={this.props.onChangeTaskStatus}
@@ -72,6 +75,19 @@ class Main extends React.Component {
             closePopup={this.togglePopup.bind(this)}
           />
         ) : null}
+
+        <button onClick={this.unclampAll} id="unclamp-all-btn">
+          <i className="large chevron circle down icon" />
+          <p>Hepsini Aç</p>
+        </button>
+
+        <button onClick={this.props.onRemoveDoneTasks} id="remove-done-btn">
+          <i className="large trash alternate icon" />
+          <p>
+            Biten Görevleri
+            <br /> Sil
+          </p>
+        </button>
       </div>
     );
   }

@@ -37,6 +37,7 @@ class Aside extends React.Component {
         </a>
 
         <a
+        id="close-app-btn"
           href="#"
           onClick={() => {
             window.open("about:blank", "_self");

@@ -23,7 +23,14 @@ class Header extends React.Component {
     return (
       <div id="header">
         <div className="header-upper">
-          <i className="circular redo icon"></i>
+          <i
+          id="refresh-page-header"
+            onClick={() => {
+              window.location.reload();
+              return false;
+            }}
+            className="circular redo icon"
+          ></i>
           <p>Görev Yönetim Paneli</p>
           <div id="date-time-p">{this.state.curTime}</div>
         </div>

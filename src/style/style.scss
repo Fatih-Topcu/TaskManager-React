@@ -58,10 +58,11 @@ $header-background: #f1f1f1;
                 padding: 0.25rem 0;
             }
         }
-        &:last-child {
-            margin-top: auto;
-            margin-bottom: 2rem;
-        }
+       
+    }
+    #close-app-btn {
+        margin-top: auto;
+        margin-bottom: 2rem;
     }
     a:hover {
         p,
@@ -132,6 +133,16 @@ $header-background: #f1f1f1;
         .header-btn.selected {
             background-color: #fff;
             border-bottom: none;
+            i{
+                color: $orange-main;
+            }
+        }
+    }
+    #refresh-page-header{
+        cursor: pointer;
+        
+        &:hover{
+            color: #000;
         }
     }
 }
@@ -173,9 +184,31 @@ $header-background: #f1f1f1;
     }
     #unclamp-all-btn {
         float: right;
-        margin-right: 3.5rem;
+        margin-right: 1.6rem;
         margin-top: 1rem;
-        color: red;
+        color:$orange-main;
+        background-color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        p{
+            font-size: 12px;
+        }
+    }
+
+    #remove-done-btn{
+        float: right;
+        margin-right: 1.25rem;
+        margin-top: 1rem;
+        color:$orange-main;
+        background-color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        p{
+            font-size: 10px;
+        }
     }
 }
 
@@ -236,6 +269,7 @@ $header-background: #f1f1f1;
         height: min-content;
         border-radius: 1rem;
         margin: 0 1rem;
+        margin-right: 3rem;
         i {
             color: $light-grey;
         }

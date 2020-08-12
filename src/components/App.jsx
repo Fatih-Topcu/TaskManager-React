@@ -143,6 +143,11 @@ class App extends React.Component {
     this.setState({ tasks: newList });
   };
 
+  removeDoneTasks = () =>{
+    const newList = this.state.tasks.filter((task) => task.done !== true);
+    this.setState({ tasks: newList });
+  }
+
   changeTaskStatus = (id) => {
     let changed = this.state.tasks.filter((task) => task.id === id)[0];
     const toChange = { ...changed };
@@ -187,6 +192,7 @@ class App extends React.Component {
     this.main.resetSearchBar();
   };
 
+ 
   render() {
     return (
       <div className="wrapper">
@@ -199,6 +205,7 @@ class App extends React.Component {
           ref={(main) => (this.main = main)}
           tasks={this.state.tasks}
           onRemoveTask={this.removeTask}
+          onRemoveDoneTasks={this.removeDoneTasks}
           onChangeTaskStatus={this.changeTaskStatus}
           onAddNewTask={this.addTask}
           onChangeTaskShow={this.changeTaskShow}

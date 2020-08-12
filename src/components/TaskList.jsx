@@ -12,6 +12,7 @@ class TaskList extends React.Component {
               return (
                 <li key={task.id}>
                   <Task
+                    ref={(task) => (this.task = task)}
                     task={task}
                     onRemoveTask={this.props.onRemoveTask}
                     onChangeTaskStatus={this.props.onChangeTaskStatus}

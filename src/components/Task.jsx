@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/style.css";
+import ReactDOM from "react-dom";
 
 class Task extends React.Component {
   unclampTask = (e) => {
@@ -9,9 +10,18 @@ class Task extends React.Component {
       : el.classList.add("unclamped");
   };
 
+  unclampAll = () => {
+    const el = document.getElementsByClassName("task");
+
+    for (let a = 0; a < el.length; a++) {
+      if (!el[a].classList.contains("unclamped")) {
+        el[a].classList.add("unclamped");
+      }
+    }
+  };
   render() {
     return (
-      <div className="task" id={`${this.props.task.id}`}>
+      <div className="task" id={`task-${this.props.task.id}`}>
         <p className={`t-${this.props.task.done}`}>
           {this.props.task.description}
         </p>

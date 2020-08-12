@@ -79,7 +79,7 @@
   padding: 0.25rem 0;
 }
 
-#aside a:last-child {
+#aside #close-app-btn {
   margin-top: auto;
   margin-bottom: 2rem;
 }
@@ -184,6 +184,18 @@
   border-bottom: none;
 }
 
+#header .header-buttons .header-btn.selected i {
+  color: #ff503f;
+}
+
+#header #refresh-page-header {
+  cursor: pointer;
+}
+
+#header #refresh-page-header:hover {
+  color: #000;
+}
+
 #main {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -242,9 +254,32 @@
 
 #main #unclamp-all-btn {
   float: right;
-  margin-right: 3.5rem;
+  margin-right: 1.6rem;
   margin-top: 1rem;
-  color: red;
+  color: #ff503f;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#main #unclamp-all-btn p {
+  font-size: 12px;
+}
+
+#main #remove-done-btn {
+  float: right;
+  margin-right: 1.25rem;
+  margin-top: 1rem;
+  color: #ff503f;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#main #remove-done-btn p {
+  font-size: 10px;
 }
 
 #tasklist .ul-list {
@@ -328,6 +363,7 @@
   height: min-content;
   border-radius: 1rem;
   margin: 0 1rem;
+  margin-right: 3rem;
 }
 
 .task .trash-button i {
