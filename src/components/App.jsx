@@ -169,7 +169,7 @@ class App extends React.Component {
     let newID = this.state.lastId;
     newID++;
     this.setState({ lastId: newID });
-    const disp = this.state.display === "done" ? false : true ;
+    const disp = this.state.display === "done" ? false : true;
     const newTask = {
       id: newID,
       show: disp,

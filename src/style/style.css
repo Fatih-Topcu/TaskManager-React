@@ -38,6 +38,11 @@
   padding-top: 2rem;
 }
 
+#aside .user-image {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
 #aside a {
   margin-top: 2rem;
   display: -webkit-box;
@@ -69,6 +74,7 @@
   left: 20px;
   color: #353a3e;
   background-color: #cacaca;
+  opacity: 80%;
   border-radius: 50%;
   font-size: 1rem;
   padding: 0.25rem 0;
@@ -76,7 +82,7 @@
 
 #aside a:last-child {
   margin-top: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 #aside a:hover p,

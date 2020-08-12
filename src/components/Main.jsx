@@ -24,6 +24,7 @@ class Main extends React.Component {
     this.setState({ searchText: "" }, () => {
       console.log(this.state);
     });
+    
   };
 
   handleSearchChange = (event) => {
@@ -41,6 +42,7 @@ class Main extends React.Component {
   };
 
   render() {
+    
     return (
       <div id="main">
         <div className="search-add">
@@ -67,7 +69,6 @@ class Main extends React.Component {
         {this.state.showPopup ? (
           <AddTaskPopup
             onAddNewTask={this.props.onAddNewTask}
-            text="Close Me"
             closePopup={this.togglePopup.bind(this)}
           />
         ) : null}

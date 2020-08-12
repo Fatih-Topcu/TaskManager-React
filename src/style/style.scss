@@ -28,6 +28,12 @@ $header-background: #f1f1f1;
     grid-area: sidebar;
     background-color: $aside-dark-grey;
     padding-top: 2rem;
+
+    .user-image{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+  
     a {
         margin-top: 2rem;
         display: flex;
@@ -47,6 +53,7 @@ $header-background: #f1f1f1;
                 left: 20px;
                 color: $aside-dark-grey;
                 background-color:$light-grey;
+                opacity:80% ;
                 border-radius: 50%;
                 font-size: 1rem;
                 padding: 0.25rem 0;
@@ -54,7 +61,7 @@ $header-background: #f1f1f1;
         }
         &:last-child {
             margin-top: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
     }
     a:hover {
