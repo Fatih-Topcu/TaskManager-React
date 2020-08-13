@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/TaskManager-React/static/css/main.97498e45.chunk.css",
-    "main.js": "/TaskManager-React/static/js/main.a8a6dfc0.chunk.js",
-    "main.js.map": "/TaskManager-React/static/js/main.a8a6dfc0.chunk.js.map",
+    "main.css": "/TaskManager-React/static/css/main.ea29943a.chunk.css",
+    "main.js": "/TaskManager-React/static/js/main.34c4149e.chunk.js",
+    "main.js.map": "/TaskManager-React/static/js/main.34c4149e.chunk.js.map",
     "runtime-main.js": "/TaskManager-React/static/js/runtime-main.0992c9d7.js",
     "runtime-main.js.map": "/TaskManager-React/static/js/runtime-main.0992c9d7.js.map",
     "static/js/2.5fdbe270.chunk.js": "/TaskManager-React/static/js/2.5fdbe270.chunk.js",
     "static/js/2.5fdbe270.chunk.js.map": "/TaskManager-React/static/js/2.5fdbe270.chunk.js.map",
     "index.html": "/TaskManager-React/index.html",
-    "precache-manifest.a07439f0051515713418f1903d4bee3c.js": "/TaskManager-React/precache-manifest.a07439f0051515713418f1903d4bee3c.js",
+    "precache-manifest.c25cc908254057075ba987cda3d35b46.js": "/TaskManager-React/precache-manifest.c25cc908254057075ba987cda3d35b46.js",
     "service-worker.js": "/TaskManager-React/service-worker.js",
-    "static/css/main.97498e45.chunk.css.map": "/TaskManager-React/static/css/main.97498e45.chunk.css.map",
+    "static/css/main.ea29943a.chunk.css.map": "/TaskManager-React/static/css/main.ea29943a.chunk.css.map",
     "static/js/2.5fdbe270.chunk.js.LICENSE.txt": "/TaskManager-React/static/js/2.5fdbe270.chunk.js.LICENSE.txt",
     "static/media/turkey.png": "/TaskManager-React/static/media/turkey.988bf7eb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0992c9d7.js",
     "static/js/2.5fdbe270.chunk.js",
-    "static/css/main.97498e45.chunk.css",
-    "static/js/main.a8a6dfc0.chunk.js"
+    "static/css/main.ea29943a.chunk.css",
+    "static/js/main.34c4149e.chunk.js"
   ]
 }
