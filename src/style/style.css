@@ -366,6 +366,9 @@
       -ms-flex-order: 3;
           order: 3;
   border: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #fff;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -376,9 +379,6 @@
   border-radius: 1rem;
   margin: 0 1rem;
   margin-right: 3rem;
-}
-
-.task .trash-button i {
   color: #cacaca;
 }
 
@@ -405,12 +405,12 @@
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border: none;
   background: #fff;
   border-radius: 1rem;
-}
-
-.task .unclamp-button i {
   color: #cacaca;
 }
 

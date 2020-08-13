@@ -45,15 +45,15 @@ class Task extends React.Component {
           />
         </form>
 
-        <button
+        <i
           onClick={() => this.props.onRemoveTask(this.props.task.id)}
-          className="trash-button"
-        >
-          <i className="circular trash icon"></i>
-        </button>
-        <button onClick={this.unclampTask} className="unclamp-button">
-          <i className="circular chevron down icon"></i>
-        </button>
+          className="circular trash icon trash-button"
+        ></i>
+
+        <i
+          onClick={this.unclampTask}
+          className="circular chevron down icon unclamp-button"
+        ></i>
       </div>
     );
   }

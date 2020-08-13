@@ -7,10 +7,14 @@ import { withTranslation } from "react-i18next";
 
 
 class SettingsPopup extends React.Component {
+
   changeLanguage = (e) => {
     const newlang = (e.currentTarget.id).split("-")[0];
     console.log(newlang);
     i18n.changeLanguage(newlang);
+
+    // Improvement can be made: Close popup after selecting new language.
+    
   };
 
   render() {

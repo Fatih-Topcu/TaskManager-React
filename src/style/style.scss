@@ -274,15 +274,14 @@ $header-background: #f1f1f1;
         display: flex;
         order: 3;
         border: none;
+        justify-content: center;
         background: #fff;
         width: min-content;
         height: min-content;
         border-radius: 1rem;
         margin: 0 1rem;
         margin-right: 3rem;
-        i {
-            color: $light-grey;
-        }
+        color: $light-grey;
         &:hover {
             background-color: $orange-main;
             color: #fff;
@@ -297,12 +296,12 @@ $header-background: #f1f1f1;
         order: 4;
         width: min-content;
         height: min-content;
+        justify-content: center;
         border: none;
         background: #fff;
         border-radius: 1rem;
-        i {
-            color: $light-grey;
-        }
+        color: $light-grey;
+
         &:hover {
             background-color: $orange-main;
             color: #fff;
