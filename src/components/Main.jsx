@@ -66,7 +66,7 @@ class Main extends React.Component {
             onClick={this.togglePopup.bind(this)}
             className="add-task-btn"
           >
-            {t("addnewtask-text")}
+            {t("addnewtask-text")} +
           </button>
         </div>
         <TaskList
@@ -81,6 +81,11 @@ class Main extends React.Component {
             closePopup={this.togglePopup.bind(this)}
           />
         ) : null}
+
+        <button id="select-all-btn" type="button"
+        onClick={this.props.onSelectAllBtn}>
+          {t("selectall-text")}
+        </button>
 
         <button onClick={this.unclampAll} id="unclamp-all-btn">
           <i className="large chevron circle down icon" />

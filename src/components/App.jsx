@@ -208,6 +208,7 @@ class App extends React.Component {
           onChangeTaskStatus={this.changeTaskStatus}
           onAddNewTask={this.addTask}
           onChangeTaskShow={this.changeTaskShow}
+          onSelectAllBtn={this.selectAllBtn}
         />
       </div>
     );

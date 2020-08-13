@@ -1,4 +1,5 @@
 import React from "react";
+import { withTranslation } from "react-i18next";
 
 class AddTaskPopup extends React.Component {
   constructor(props) {
@@ -29,25 +30,26 @@ class AddTaskPopup extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
     return (
       <div className="popup">
         <div className="popup_inner">
           <div className="add-task">
-            <h3>Yeni Görev Ekle</h3>
+            <h3>{t("addnewtask-text")}</h3>
             <textarea
               onChange={this.handleChange}
               onKeyDown={this.onEnterPressed}
               name="taskdesc"
               cols="45"
               rows="5"
-              placeholder="Görev Tanımı..."
+              placeholder={t("addnewtaskdescription-text")}
             ></textarea>
             <button
               onClick={this.addTaskAndClose}
               type="button"
               id="add-input-task-btn"
             >
-              EKLE
+              {t("add-text")}
             </button>
           </div>
 
@@ -60,4 +62,4 @@ class AddTaskPopup extends React.Component {
   }
 }
 
-export default AddTaskPopup;
+export default withTranslation()(AddTaskPopup);

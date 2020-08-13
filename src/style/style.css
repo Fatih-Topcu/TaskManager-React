@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Franklin Gothic Light", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .wrapper {
@@ -173,7 +173,7 @@
   top: -0.5rem;
   left: 10rem;
   color: #fff;
-  background-color: #ff503f;
+  background-color: #ff503fcc;
   border-radius: 50%;
   font-size: 1rem;
   padding: 0.25rem;
@@ -272,6 +272,7 @@
 #main #unclamp-all-btn:hover,
 #main #clamp-all-btn:hover {
   color: #000;
+  font-size: 16px;
 }
 
 #main #remove-done-btn {
@@ -294,13 +295,28 @@
   font-size: 16px;
 }
 
+#main #select-all-btn {
+  visibility: hidden;
+  margin: 1.5rem 0.5rem;
+  border: none;
+  background: #fff;
+  color: #ff503f;
+  outline: none;
+  cursor: pointer;
+}
+
+#main #select-all-btn:hover {
+  color: #000;
+  font-size: 16px;
+}
+
 #tasklist .ul-list {
   height: 60vh;
   overflow-y: scroll;
 }
 
 .task {
-  padding: 0.5rem;
+  padding: 0.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -492,6 +508,7 @@
 
 .popup_inner #language-flags .flag:hover {
   cursor: pointer;
+  color: #ff503f;
 }
 
 .popup_inner #close-popup-btn {

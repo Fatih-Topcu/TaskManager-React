@@ -10,7 +10,7 @@ i18n.use(LanguageDetector).init({
                 "settings-text": "Settings",
                 "close-text": "Close",
                 "language-text": "Language",
-                "addnewtask-text":"Add New Task +",
+                "addnewtask-text":"Add New Task",
                 "search-text":"Search..",
                 "collapse-text":"Collapse All",
                 "expand-text":"Expand All",
@@ -19,7 +19,11 @@ i18n.use(LanguageDetector).init({
                 "taskmanagementpanel-text":"Task Management Panel",
                 "alltasks-text":"All Tasks",
                 "activetasks-text":"Active Tasks",
-                "donetasks-text":"Finished Tasks"
+                "donetasks-text":"Finished Tasks",
+                "selectall-text":"Select All",
+                "addnewtaskdescription-text":"Task Description..",
+                "add-text":"ADD",
+
             }
         },
         tr: {
@@ -28,7 +32,7 @@ i18n.use(LanguageDetector).init({
                 "settings-text": "Ayarlar",
                 "close-text": "Kapat",
                 "language-text": "Dil",
-                "addnewtask-text":"Yeni Görev Ekle +",
+                "addnewtask-text":"Yeni Görev Ekle",
                 "search-text":"Arama...",
                 "collapse-text":"Hepsini Gizle",
                 "expand-text":"Hepsini Aç",
@@ -37,7 +41,10 @@ i18n.use(LanguageDetector).init({
                 "taskmanagementpanel-text":"Görev Yönetim Paneli",
                 "alltasks-text":"Tüm Görevler",
                 "activetasks-text":"Aktif Görevler",
-                "donetasks-text":"Biten Görevler"
+                "donetasks-text":"Biten Görevler",
+                "selectall-text":"Hepsini Seç",
+                "addnewtaskdescription-text":"Görev Tanımı..",
+                "add-text":"EKLE",
 
             }
         },   
@@ -47,7 +54,7 @@ i18n.use(LanguageDetector).init({
                 "settings-text": "Einstellungen",
                 "close-text": "Verlassen",
                 "language-text": "Sprache",
-                "addnewtask-text":"Neue Aufgabe Hinzufügen +",
+                "addnewtask-text":"Neue Aufgabe Hinzufügen",
                 "search-text":"Suche...",
                 "collapse-text":"Alles zusammenbrechen",
                 "expand-text":"Alle Erweitern",
@@ -56,8 +63,10 @@ i18n.use(LanguageDetector).init({
                 "taskmanagementpanel-text":"Aufgabenverwaltungsbereich",
                 "alltasks-text":"Alle Aufgaben",
                 "activetasks-text":"Aktive Aufgaben",
-                "donetasks-text":"Erledigte Aufgaben"
-
+                "donetasks-text":"Erledigte Aufgaben",
+                "selectall-text":"Wählen Sie Alle",
+                "addnewtaskdescription-text":"Aufgabenbeschreibung..",
+                "add-text":"Hinzufügen"
             }
         },
     },
