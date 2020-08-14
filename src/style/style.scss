@@ -98,6 +98,7 @@ $header-background: #f1f1f1;
         }
         #date-time-p {
             font-size: 1rem;
+            font-family: monospace !important;
         }
     }
     .header-buttons {
@@ -121,7 +122,7 @@ $header-background: #f1f1f1;
             .active-circle {
                 position: relative;
                 top: -0.5rem;
-                left: 10rem;
+                left: 11rem;
                 color: #fff;
                 background-color: #ff503fcc;
                 border-radius: 50%;
@@ -150,7 +151,6 @@ $header-background: #f1f1f1;
 #main {
     grid-area: main;
     margin: 1rem;
-    padding: 1rem;
     border: 1px $light-grey solid;
     .search-add {
         display: grid;
@@ -179,6 +179,7 @@ $header-background: #f1f1f1;
             height: 75%;
             font-size: 12px;
             cursor: pointer;
+            margin-top: 0.5rem;
         }
         border-bottom: 1px $light-grey solid;
     }

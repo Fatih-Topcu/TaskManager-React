@@ -14,7 +14,7 @@ i18n.use(LanguageDetector).init({
                 "search-text":"Search..",
                 "collapse-text":"Collapse All",
                 "expand-text":"Expand All",
-                "delete-text1":"Delete Done",
+                "delete-text1":"Delete Finished",
                 "delete-text2":"Tasks",
                 "taskmanagementpanel-text":"Task Management Panel",
                 "alltasks-text":"All Tasks",

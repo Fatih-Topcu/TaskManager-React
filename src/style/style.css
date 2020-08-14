@@ -132,6 +132,7 @@
 
 #header .header-upper #date-time-p {
   font-size: 1rem;
+  font-family: monospace !important;
 }
 
 #header .header-buttons {
@@ -171,7 +172,7 @@
 #header .header-buttons .header-btn .active-circle {
   position: relative;
   top: -0.5rem;
-  left: 10rem;
+  left: 11rem;
   color: #fff;
   background-color: #ff503fcc;
   border-radius: 50%;
@@ -201,7 +202,6 @@
   -ms-grid-column: 2;
   grid-area: main;
   margin: 1rem;
-  padding: 1rem;
   border: 1px #cacaca solid;
 }
 
@@ -250,6 +250,7 @@
   height: 75%;
   font-size: 12px;
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 #main #unclamp-all-btn,
