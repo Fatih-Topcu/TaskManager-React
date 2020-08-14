@@ -12,6 +12,7 @@ class Main extends React.Component {
     this.state = {
       showPopup: false,
       searchText: "",
+      expandAll: false,
     };
   }
 
@@ -43,10 +44,12 @@ class Main extends React.Component {
 
   unclampAll = () => {
     this.tasklist.task.unclampAll();
+    this.setState({ expandAll: true });
   };
 
   clampAll = () => {
     this.tasklist.task.clampAll();
+    this.setState({ expandAll: false });
   };
 
   render() {
@@ -82,20 +85,32 @@ class Main extends React.Component {
           />
         ) : null}
 
-        <button id="select-all-btn" type="button"
-        onClick={this.props.onSelectAllBtn}>
+        <button
+          id="select-all-btn"
+          type="button"
+          onClick={this.props.onSelectAllBtn}
+        >
           {t("selectall-text")}
         </button>
 
-        <button onClick={this.unclampAll} id="unclamp-all-btn">
-          <i className="large chevron circle down icon" />
-          <p>{t("expand-text")}</p>
+        <button
+          onClick={this.state.expandAll ? this.clampAll : this.unclampAll}
+          id="unclamp-all-btn"
+        >
+          <i
+            className={
+              this.state.expandAll
+                ? "large chevron circle up icon"
+                : "large chevron circle down icon"
+            }
+          />
+          <p>{this.state.expandAll ? t("collapse-text") : t("expand-text")}</p>
         </button>
 
-        <button onClick={this.clampAll} id="clamp-all-btn">
+        {/* <button onClick={this.clampAll} id="clamp-all-btn">
           <i className="large chevron circle up icon" />
           <p>{t("collapse-text")}</p>
-        </button>
+        </button> */}
 
         <button onClick={this.props.onRemoveDoneTasks} id="remove-done-btn">
           <i className="large trash alternate icon" />
