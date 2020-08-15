@@ -29,31 +29,43 @@ class Task extends React.Component {
       }
     }
   };
+
+  renderTaskDescription = () => (
+    <p className={`t-${this.props.task.done}`}>{this.props.task.description}</p>
+  );
+
+  renderTaskStatusCheckbox = () => (
+    <form>
+      <input
+        name="done"
+        type="checkbox"
+        checked={this.props.task.done}
+        onChange={() => this.props.onChangeTaskStatus(this.props.task.id)}
+      />
+    </form>
+  );
+
+  renderTaskRemoveButton = () => (
+    <i
+      onClick={() => this.props.onRemoveTask(this.props.task.id)}
+      className="circular trash icon trash-button"
+    ></i>
+  );
+
+  renderTaskExpandButton = () => (
+    <i
+      onClick={this.unclampTask}
+      className="circular chevron down icon unclamp-button"
+    ></i>
+  );
+
   render() {
     return (
       <div className="task" id={`task-${this.props.task.id}`}>
-        <p className={`t-${this.props.task.done}`}>
-          {this.props.task.description}
-        </p>
-
-        <form>
-          <input
-            name="done"
-            type="checkbox"
-            checked={this.props.task.done}
-            onChange={() => this.props.onChangeTaskStatus(this.props.task.id)}
-          />
-        </form>
-
-        <i
-          onClick={() => this.props.onRemoveTask(this.props.task.id)}
-          className="circular trash icon trash-button"
-        ></i>
-
-        <i
-          onClick={this.unclampTask}
-          className="circular chevron down icon unclamp-button"
-        ></i>
+        {this.renderTaskDescription()}
+        {this.renderTaskStatusCheckbox()}
+        {this.renderTaskRemoveButton()}
+        {this.renderTaskExpandButton()}
       </div>
     );
   }

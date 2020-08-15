@@ -29,30 +29,37 @@ class AddTaskPopup extends React.Component {
     }
   };
 
+  renderAddTaskWindow = () => {
+    const { t } = this.props;
+
+    return (
+      <div className="add-task">
+        <h3>{t("addnewtask-text")}</h3>
+        <textarea
+          onChange={this.handleChange}
+          onKeyDown={this.onEnterPressed}
+          name="taskdesc"
+          cols="45"
+          rows="5"
+          placeholder={t("addnewtaskdescription-text")}
+        ></textarea>
+        <button
+          onClick={this.addTaskAndClose}
+          type="button"
+          id="add-input-task-btn"
+        >
+          {t("add-text")}
+        </button>
+      </div>
+    );
+  };
+
   render() {
     const { t } = this.props;
     return (
       <div className="popup">
         <div className="popup_inner">
-          <div className="add-task">
-            <h3>{t("addnewtask-text")}</h3>
-            <textarea
-              onChange={this.handleChange}
-              onKeyDown={this.onEnterPressed}
-              name="taskdesc"
-              cols="45"
-              rows="5"
-              placeholder={t("addnewtaskdescription-text")}
-            ></textarea>
-            <button
-              onClick={this.addTaskAndClose}
-              type="button"
-              id="add-input-task-btn"
-            >
-              {t("add-text")}
-            </button>
-          </div>
-
+          {this.renderAddTaskWindow()}
           <button id="close-popup-btn" onClick={this.props.closePopup}>
             <i className="large circular window close icon"></i>
           </button>

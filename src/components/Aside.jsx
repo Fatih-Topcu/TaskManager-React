@@ -4,8 +4,6 @@ import "../style/style.css";
 import SettingsPopup from "./SettingsPopup";
 import { withTranslation } from "react-i18next";
 
-
-
 class Aside extends React.Component {
   constructor(props) {
     super(props);
@@ -21,8 +19,7 @@ class Aside extends React.Component {
   }
 
   render() {
-
-    const {t} = this.props;
+    const { t } = this.props;
     return (
       <div id="aside">
         <div className="user-image">
@@ -42,7 +39,7 @@ class Aside extends React.Component {
         </a>
 
         <a
-        id="close-app-btn"
+          id="close-app-btn"
           href="#"
           onClick={() => {
             window.open("about:blank", "_self");
@@ -64,4 +61,4 @@ class Aside extends React.Component {
   }
 }
 
-export default (withTranslation()(Aside));
+export default withTranslation()(Aside);

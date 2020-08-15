@@ -52,26 +52,31 @@ class Main extends React.Component {
     this.setState({ expandAll: false });
   };
 
+  renderSearchAddBar = () => {
+    const { t } = this.props;
+
+    return (
+      <div className="search-add">
+        <form className="task-search">
+          <input
+            type="text"
+            value={this.state.searchText}
+            onChange={this.handleSearchChange}
+            placeholder={t("search-text")}
+          ></input>
+        </form>
+        <button onClick={this.togglePopup.bind(this)} className="add-task-btn">
+          {t("addnewtask-text")} +
+        </button>
+      </div>
+    );
+  };
+
   render() {
     const { t } = this.props;
     return (
       <div id="main">
-        <div className="search-add">
-          <form className="task-search">
-            <input
-              type="text"
-              value={this.state.searchText}
-              onChange={this.handleSearchChange}
-              placeholder={t("search-text")}
-            ></input>
-          </form>
-          <button
-            onClick={this.togglePopup.bind(this)}
-            className="add-task-btn"
-          >
-            {t("addnewtask-text")} +
-          </button>
-        </div>
+        {this.renderSearchAddBar()}
         <TaskList
           ref={(tasklist) => (this.tasklist = tasklist)}
           tasks={this.props.tasks}
@@ -85,6 +90,7 @@ class Main extends React.Component {
           />
         ) : null}
 
+        {/* Invisible for now*/}
         <button
           id="select-all-btn"
           type="button"
@@ -92,6 +98,7 @@ class Main extends React.Component {
         >
           {t("selectall-text")}
         </button>
+        {/* Invisible for now*/}
 
         <button
           onClick={this.state.expandAll ? this.clampAll : this.unclampAll}
