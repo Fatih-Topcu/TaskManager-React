@@ -23,7 +23,8 @@ class Aside extends React.Component {
     return (
       <div id="aside">
         <div className="user-image">
-          <i className="grey huge user circle icon" />
+          <img src={(this.props.stateUser.image)} />
+          <p>{this.props.stateUser.name}</p>
         </div>
 
         <a href="#" id="tasks-button">

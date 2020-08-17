@@ -41,6 +41,23 @@
 #aside .user-image {
   margin-top: 2rem;
   margin-bottom: 4rem;
+  text-align: center;
+}
+
+#aside .user-image p, #aside .user-image img {
+  margin: auto;
+}
+
+#aside .user-image img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10%;
+}
+
+#aside .user-image p {
+  margin-top: 0.5rem;
+  color: #ff503f;
+  font-size: 1.25rem;
 }
 
 #aside a {
@@ -309,11 +326,6 @@
 #main #select-all-btn:hover {
   color: #000;
   font-size: 16px;
-}
-
-#tasklist {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 
 #tasklist .ul-list {

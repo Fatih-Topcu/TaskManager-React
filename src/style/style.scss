@@ -32,6 +32,24 @@ $header-background: #f1f1f1;
   .user-image {
     margin-top: 2rem;
     margin-bottom: 4rem;
+    text-align: center;
+
+    p, img{
+      margin: auto;
+    }
+
+    img{
+      width: 5rem;
+      height: 5rem;
+      border-radius: 10%;
+    }
+
+    p{
+      margin-top: 0.5rem;
+      color: $orange-main;
+      font-size: 1.25rem;
+    }
+ 
   }
 
   a {
