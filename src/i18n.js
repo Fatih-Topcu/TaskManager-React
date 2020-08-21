@@ -23,6 +23,8 @@ i18n.use(LanguageDetector).init({
                 "selectall-text":"Select All",
                 "addnewtaskdescription-text":"Task Description..",
                 "add-text":"ADD",
+                "sign-in":"Sign In",
+                "sign-out":"Sign Out"
 
             }
         },
@@ -45,6 +47,8 @@ i18n.use(LanguageDetector).init({
                 "selectall-text":"Hepsini Seç",
                 "addnewtaskdescription-text":"Görev Tanımı..",
                 "add-text":"EKLE",
+                "sign-in":"Giriş",
+                "sign-out":"Çıkış"
 
             }
         },   
@@ -66,7 +70,10 @@ i18n.use(LanguageDetector).init({
                 "donetasks-text":"Erledigte Aufgaben",
                 "selectall-text":"Wählen Sie Alle",
                 "addnewtaskdescription-text":"Aufgabenbeschreibung..",
-                "add-text":"Hinzufügen"
+                "add-text":"Hinzufügen",
+                "sign-in":"Einloggen",
+                "sign-out":"Ausloggen"
+
             }
         },
     },

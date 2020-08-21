@@ -5,6 +5,7 @@ import Main from "./Main.jsx";
 import Header from "./Header.jsx";
 import "../style/style.css";
 import axios from "axios";
+import firebase from "firebase";
 
 class App extends React.Component {
   state = {
@@ -14,20 +15,26 @@ class App extends React.Component {
     user: {
       name: "",
       image: "",
+      id: "",
     },
   };
 
   componentDidMount() {
-    axios
-      .get("https://randomuser.me/api/")
-      .then((response) => {
-        console.log(response.data)
-        let newUser = { name: response.data.results[0].name.first , image: response.data.results[0].picture.medium };
-        this.setState({ user: newUser });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          user: { name: user.displayName, image: user.photoURL, id: user.uid },
+        });
+      } else {
+        this.setState({
+          user: {
+            name: "",
+            image: "",
+            id: "",
+          },
+        });
+      }
+    });
 
     if (localStorage.getItem("tasks") !== null) {
       const json = localStorage.getItem("tasks");
@@ -186,6 +193,7 @@ class App extends React.Component {
   };
 
   render() {
+   
     return (
       <div className="wrapper">
         <Aside
@@ -210,5 +218,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

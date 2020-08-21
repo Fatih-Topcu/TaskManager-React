@@ -24,7 +24,7 @@ class Main extends React.Component {
 
   resetSearchBar = () => {
     this.setState({ searchText: "" }, () => {
-      console.log(this.state);
+  
     });
   };
 
