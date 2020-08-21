@@ -16,7 +16,6 @@ class Aside extends React.Component {
     this.state = {
       showPopup: false,
     };
-   
   }
 
   togglePopup() {
@@ -25,13 +24,11 @@ class Aside extends React.Component {
     });
   }
 
- 
-
   render() {
     const { t } = this.props;
     const { stateUser } = this.props;
     const { user, signOut, signInWithGoogle } = this.props;
-  
+
     return (
       <div id="aside">
         <div className="user-image">
@@ -50,7 +47,7 @@ class Aside extends React.Component {
           {user ? <p>{stateUser.name}</p> : null}
           {user ? (
             <button className="ui tiny google plus button" onClick={signOut}>
-             {t("sign-out")}
+              {t("sign-out")}
             </button>
           ) : null}
         </div>

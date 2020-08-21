@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
- "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .wrapper {
@@ -45,19 +44,19 @@
   text-align: center;
 }
 
-#aside .user-image p, #aside .user-image img {
+#aside .user-image p,
+#aside .user-image img {
   margin: auto;
 }
 
-#aside .user-image img{
+#aside .user-image img {
   width: 5rem;
   height: 5rem;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 #aside .user-image p {
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
   color: #ff503f;
   font-size: 1.25rem;
 }
@@ -94,10 +93,10 @@
   color: #353a3e;
   background-color: #cacacaca;
   border-radius: 50%;
-  font-size: 1rem;
   width: 1.5rem;
   height: 1.5rem;
-  padding: 0.3rem;
+  font-size: 1rem;
+  padding: 0.25rem 0;
 }
 
 #aside #close-app-btn {
@@ -197,10 +196,10 @@
   color: #fff;
   background-color: #ff503fcc;
   border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
   font-size: 1rem;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.4rem;
+  padding: 0.25rem;
 }
 
 #header .header-buttons .header-btn.selected {
@@ -268,7 +267,7 @@
   background-color: #ff503f;
   color: #fff;
   border: none;
-  border-radius: 15%;
+  border-radius: 50%;
   width: 75%;
   height: 75%;
   font-size: 12px;
@@ -365,6 +364,35 @@
 
 .task form input:hover {
   cursor: pointer;
+}
+
+.task .task-data {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.task .task-data .task-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 2rem;
+}
+
+.task .task-data .task-date .task-creation-date,
+.task .task-data .task-date .task-completion-date {
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: monospace;
+  color: #ff503f;
+  margin: 0 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
 }
 
 .task p {

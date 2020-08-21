@@ -1,6 +1,8 @@
 import React from "react";
 import "../style/style.css";
 import ReactDOM from "react-dom";
+import i18n from "../i18n";
+import { withTranslation } from "react-i18next";
 
 class Task extends React.Component {
   unclampTask = (e) => {
@@ -34,6 +36,22 @@ class Task extends React.Component {
     <p className={`t-${this.props.task.done}`}>{this.props.task.description}</p>
   );
 
+  renderTaskDates = () => {
+    const { t, task } = this.props;
+    return (
+      <div className="task-date">
+        <div className="task-creation-date">
+          {t("task-creation-date")} : {task.dateCreated}
+        </div>
+        <div className="task-completion-date">
+          {task.done
+            ? t("task-completion-date") + " : " + task.dateCompleted
+            : null}
+        </div>
+      </div>
+    );
+  };
+
   renderTaskStatusCheckbox = () => (
     <form>
       <input
@@ -62,7 +80,10 @@ class Task extends React.Component {
   render() {
     return (
       <div className="task" id={`task-${this.props.task.id}`}>
-        {this.renderTaskDescription()}
+        <div className="task-data">
+          {this.renderTaskDescription()}
+          {this.renderTaskDates()}
+        </div>
         {this.renderTaskStatusCheckbox()}
         {this.renderTaskRemoveButton()}
         {this.renderTaskExpandButton()}
@@ -71,4 +92,4 @@ class Task extends React.Component {
   }
 }
 
-export default Task;
+export default withTranslation(undefined, { withRef: true })(Task);

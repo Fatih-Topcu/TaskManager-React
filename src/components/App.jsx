@@ -39,7 +39,15 @@ class App extends React.Component {
     if (localStorage.getItem("tasks") !== null) {
       const json = localStorage.getItem("tasks");
       const tasks = JSON.parse(json);
-      this.setState({ tasks: tasks });
+
+      this.setState({ tasks: tasks }, () => {
+        let resetted = this.state.tasks;
+        for (let a = 0; a < resetted.length; a++) {
+          resetted[a].show = true;
+        }
+
+        this.setState({ tasks: resetted });
+      });
 
       const idJson = localStorage.getItem("lastid");
       const lastid = JSON.parse(idJson);
@@ -52,6 +60,8 @@ class App extends React.Component {
           id: 1,
           show: true,
           done: true,
+          dateCreated: new Date().toLocaleDateString(),
+          dateCompleted: new Date().toLocaleDateString(),
           description:
             "TASK 1 G1-Donec in lacus commodo, viverra enim eget, dignissim nunc. Cras et leo eu augue malesuada volutpat. Nulla egestas enim ex.",
         },
@@ -59,6 +69,8 @@ class App extends React.Component {
           id: 2,
           show: true,
           done: false,
+          dateCreated: new Date().toLocaleDateString(),
+          dateCompleted: null,
           description:
             "TASK 2 G2-Mauris tempor scelerisque neque, sed pellentesque lorem consequat eu. Nam tincidunt ex ut dui ultrices pretium. Donec imperdiet id lorem vel pharetra. Curabitur tincidunt scelerisque tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque aliquet dolor aliquet, commodo nulla nec, aliquam est. Mauris faucibus aliquet purus in fringilla. Nunc consequat varius elit ut mollis. Fusce euismod ligula sapien, et ornare diam pellentesque ac. Proin lacinia.",
         },
@@ -66,6 +78,8 @@ class App extends React.Component {
           id: 3,
           show: true,
           done: false,
+          dateCreated: new Date().toLocaleDateString(),
+          dateCompleted: null,
           description:
             "TASK 3 G2-Morbi quis neque nec mi porta congue at in arcu. Vestibulum eget placerat sapien. Donec lacinia augue sed scelerisque volutpat. Mauris elementum rhoncus ipsum, ac laoreet tellus ultricies non. Duis..",
         },
@@ -73,13 +87,14 @@ class App extends React.Component {
           id: 4,
           show: true,
           done: true,
+          dateCreated: new Date().toLocaleDateString(),
+          dateCompleted: new Date().toLocaleDateString(),
           description:
             "TASK 4 G2-Nam sit amet eleifend sem. Sed id mi tortor. Nulla at ultrices quam, blandit pharetra enim. Nulla tincidunt diam sit amet leo iaculis, sodales condimentum sapien tincidunt. Morbi venenatis fermentum tortor ut euismod. Quisque id sodales ligula, in pharetra nunc. Vivamus et posuere sapien, in porttitor urna. Etiam feugiat nisl ut neque lobortis, sed convallis ipsum sagittis. Quisque facilisis magna auctor ipsum sagittis facilisis. Praesent cursus vehicula dui quis eleifend.Fusce aliquet est non enim porta, nec facilisis quam facilisis. Curabitur bibendum semper arcu, in iaculis enim blandit a. Aliquam sodales ante quam. Phasellus ut condimentum tortor, sed laoreet sapien. Proin non risus congue, accumsan diam non, fermentum orci. Phasellus tempus sagittis elit eu pellentesque. Proin quis tortor metus. Donec.",
         },
       ];
 
-      this.setState({ tasks: tasks });
-      this.setState({ lastId: 4 });
+      this.setState({ tasks: tasks, lastId: 4 });
     }
   }
 
@@ -152,6 +167,9 @@ class App extends React.Component {
     let changed = this.state.tasks.filter((task) => task.id === id)[0];
     const toChange = { ...changed };
     changed.done = changed.done ? false : true;
+    changed.dateCompleted = changed.done
+      ? new Date().toLocaleDateString()
+      : null;
     this.setState({ toChange: changed });
 
     this.changeDisplay();
@@ -179,6 +197,8 @@ class App extends React.Component {
       id: newID,
       show: disp,
       done: false,
+      dateCreated: new Date().toLocaleDateString(),
+      dateCompleted: null,
       description: description,
     };
 
@@ -193,7 +213,6 @@ class App extends React.Component {
   };
 
   render() {
-   
     return (
       <div className="wrapper">
         <Aside
