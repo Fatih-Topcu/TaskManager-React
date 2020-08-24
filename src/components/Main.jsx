@@ -30,6 +30,7 @@ class Main extends React.Component {
 
   handleSearchChange = (event) => {
     this.setState({ searchText: event.target.value }, this.updateList);
+   
   };
 
   updateList = () => {
@@ -39,7 +40,7 @@ class Main extends React.Component {
         .includes(this.state.searchText.toLowerCase());
     });
 
-    this.props.onChangeTaskShow(filtered);
+    this.props.onChangeTaskShow(filtered, true);
   };
 
   unclampAll = () => {

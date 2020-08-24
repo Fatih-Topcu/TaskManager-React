@@ -32,7 +32,7 @@ class Aside extends React.Component {
     return (
       <div id="aside">
         <div className="user-image">
-          {user ? (
+          {stateUser !== null ? (
             <img src={stateUser.image} />
           ) : (
             <button
@@ -44,8 +44,8 @@ class Aside extends React.Component {
             </button>
           )}
 
-          {user ? <p>{stateUser.name}</p> : null}
-          {user ? (
+          {stateUser ? <p>{stateUser.name}</p> : null}
+          {stateUser ? (
             <button className="ui tiny google plus button" onClick={signOut}>
               {t("sign-out")}
             </button>

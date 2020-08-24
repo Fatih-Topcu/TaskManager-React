@@ -159,6 +159,7 @@ $header-background: #f1f1f1;
         color: $orange-main;
       }
     }
+  
   }
   #refresh-page-header {
     cursor: pointer;
@@ -170,13 +171,16 @@ $header-background: #f1f1f1;
 }
 
 #main {
+  
   grid-area: main;
   margin: 1rem;
   border: 1px $light-grey solid;
   .search-add {
+    
     display: grid;
     grid-template-columns: 6fr 1fr;
     .task-search {
+      
       input {
         width: 60vw;
         padding: 0.5rem;
@@ -260,6 +264,7 @@ $header-background: #f1f1f1;
 }
 
 #tasklist {
+  
   .ul-list {
     height: 60vh;
     overflow-y: scroll;
@@ -373,6 +378,7 @@ $header-background: #f1f1f1;
 }
 
 .popup {
+  overflow: scroll;
   z-index: 2;
   position: fixed;
   width: 100%;

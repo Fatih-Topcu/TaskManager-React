@@ -29,7 +29,6 @@ class Header extends React.Component {
           id="refresh-page-header"
           onClick={() => {
             window.location.reload();
-            localStorage.clear();
             return false;
           }}
           className="circular redo icon"
