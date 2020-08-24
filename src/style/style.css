@@ -1,3 +1,21 @@
+@media screen and (max-width: 700px) {
+  * {
+    font-size: 12px !important;
+  }
+  .header-btn {
+    width: 12.5rem !important;
+  }
+  .task-creation-date,
+  .task-completion-date {
+    font-size: 8px !important;
+    margin: 0 0.25rem !important;
+  }
+  .active-circle {
+    left: 0rem !important;
+    top: -1rem !important;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +33,6 @@
       -ms-flex-align: stretch;
           align-items: stretch;
       grid-template-areas: "sidebar header header" "sidebar main ." "sidebar . .";
-  width: 100vw;
-  height: 100vh;
 }
 
 #aside {

@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "../style/style.css";
 import { withTranslation } from "react-i18next";
 
 class Header extends React.Component {

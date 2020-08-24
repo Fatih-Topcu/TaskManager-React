@@ -4,6 +4,26 @@ $light-grey: #cacaca;
 $orange-main: #ff503f;
 $header-background: #f1f1f1;
 
+@media screen and (max-width: 700px) {
+  * {
+    font-size: 12px !important;
+  }
+  .header-btn {
+    width: 12.5rem !important;
+  }
+
+  .task-creation-date,
+  .task-completion-date {
+    font-size: 8px !important;
+    margin: 0 0.25rem !important;
+  }
+
+  .active-circle {
+    left: 0rem !important;
+    top: -1rem !important;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +37,7 @@ $header-background: #f1f1f1;
   grid-template-rows: 10fr 40fr 5fr;
   align-items: stretch;
   grid-template-areas: "sidebar header header" "sidebar main ." "sidebar . .";
-  width: 100vw;
-  height: 100vh;
+
 }
 
 #aside {
@@ -159,7 +178,6 @@ $header-background: #f1f1f1;
         color: $orange-main;
       }
     }
-  
   }
   #refresh-page-header {
     cursor: pointer;
@@ -171,16 +189,13 @@ $header-background: #f1f1f1;
 }
 
 #main {
-  
   grid-area: main;
   margin: 1rem;
   border: 1px $light-grey solid;
   .search-add {
-    
     display: grid;
     grid-template-columns: 6fr 1fr;
     .task-search {
-      
       input {
         width: 60vw;
         padding: 0.5rem;
@@ -264,7 +279,6 @@ $header-background: #f1f1f1;
 }
 
 #tasklist {
-  
   .ul-list {
     height: 60vh;
     overflow-y: scroll;
@@ -296,16 +310,15 @@ $header-background: #f1f1f1;
       display: flex;
       flex-direction: row;
       margin: 0 2rem;
-     
+
       .task-creation-date,
       .task-completion-date {
         font-size: 0.9rem;
         font-weight: bold;
         font-family: monospace;
         color: #ff503f;
-        margin: 0 1rem ;
+        margin: 0 1rem;
         flex: 1 auto;
-        
       }
     }
   }

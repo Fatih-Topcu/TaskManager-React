@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import Aside from "./Aside.jsx";
 import Main from "./Main.jsx";
 import Header from "./Header.jsx";
-import "../style/style.css";
-import axios from "axios";
 import firebase from "firebase";
 
 class App extends React.Component {

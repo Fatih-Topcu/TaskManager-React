@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "../style/style.css";
 import SettingsPopup from "./SettingsPopup";
 import { withTranslation } from "react-i18next";
 import withFirebaseAuth from "react-with-firebase-auth";

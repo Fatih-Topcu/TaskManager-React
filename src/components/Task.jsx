@@ -1,7 +1,4 @@
 import React from "react";
-import "../style/style.css";
-import ReactDOM from "react-dom";
-import i18n from "../i18n";
 import { withTranslation } from "react-i18next";
 
 class Task extends React.Component {

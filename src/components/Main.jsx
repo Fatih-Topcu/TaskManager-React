@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "../style/style.css";
 import TaskList from "./TaskList.jsx";
 import AddTaskPopup from "./AddTaskPopup.jsx";
 import { withTranslation } from "react-i18next";
