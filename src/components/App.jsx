@@ -20,6 +20,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    this.resetHeaderButtons();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState(
@@ -66,6 +67,18 @@ class App extends React.Component {
       }
     });
   }
+
+  resetHeaderButtons = () => {
+    this.setState({ display: "all" }, () => {
+      if (document.getElementsByClassName("selected").length > 0) {
+        document
+          .getElementsByClassName("selected")[0]
+          .classList.remove("selected");
+
+        document.getElementById("all-btn").classList.add("selected");
+      }
+    });
+  };
 
   changeToShow = (e) => {
     this.resetSearchBar();
@@ -114,7 +127,6 @@ class App extends React.Component {
 
   changeDisplay = () => {
     let filtered = [];
-
     const { display } = this.state;
 
     this.changeSelectedButton();
@@ -191,11 +203,9 @@ class App extends React.Component {
       );
       this.changeSelectedButton();
     } else {
-      this.setState(
-        {
-          tasks: nextStateTasks,
-        }
-      );
+      this.setState({
+        tasks: nextStateTasks,
+      });
     }
   };
 
@@ -232,8 +242,12 @@ class App extends React.Component {
       localStorage.setItem("tasks", json);
       localStorage.setItem("lastid", idJson);
     } else if (this.state.user.id !== null) {
-      const toUpdate = JSON.parse(JSON.stringify(this.state));
-
+      let toUpdate = {
+        tasks: this.state.tasks,
+        lastId: this.state.lastId,
+      };
+     
+      toUpdate = JSON.parse(JSON.stringify(toUpdate));
       firebase
         .database()
         .ref(`users/${this.state.user.id}/state/`)
@@ -242,6 +256,7 @@ class App extends React.Component {
   };
 
   render() {
+ 
     return (
       <div className="wrapper">
         <Aside
