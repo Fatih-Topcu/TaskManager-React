@@ -16,28 +16,28 @@ class SettingsPopup extends React.Component {
   renderLanguageFlags = () => (
     <div id="language-flags">
       <div onClick={this.changeLanguage} className="flag" id="tr-flag">
-        <img src={tr} width="80" height="60" />
+        <img src={tr} width="80" height="60" alt="Turkey Flag"/>
         <p>Türkçe</p>
       </div>
       <div onClick={this.changeLanguage} className="flag" id="en-flag">
-        <img src={en} width="80" height="60" />
+        <img src={en} width="80" height="60" alt="UK Flag"/>
         <p>English</p>
       </div>
       <div onClick={this.changeLanguage} className="flag" id="de-flag">
-        <img src={de} width="80" height="60" />
+        <img src={de} width="80" height="60" alt="Germany Flag" />
         <p>Deutsch</p>
       </div>
     </div>
   );
 
   render() {
-    const { t } = this.props;
+    const { t, closePopup} = this.props;
     return (
       <div className="popup">
         <div className="popup_inner">
           <div id="language-text">{t("language-text")}</div>
           {this.renderLanguageFlags()};
-          <button id="close-popup-btn" onClick={this.props.closePopup}>
+          <button id="close-popup-btn" onClick={closePopup}>
             <i className="large circular window close icon"></i>
           </button>
         </div>

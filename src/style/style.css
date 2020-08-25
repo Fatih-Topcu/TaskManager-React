@@ -27,8 +27,8 @@
   display: grid;
   -ms-grid-columns: 1fr 10fr 1fr;
       grid-template-columns: 1fr 10fr 1fr;
-  -ms-grid-rows: 10fr 40fr 5fr;
-      grid-template-rows: 10fr 40fr 5fr;
+  -ms-grid-rows: 5fr 30fr 5fr;
+      grid-template-rows: 5fr 30fr 5fr;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -246,8 +246,8 @@
 #main .search-add {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 6fr 1fr;
-      grid-template-columns: 6fr 1fr;
+  -ms-grid-columns: 6fr 2fr;
+      grid-template-columns: 6fr 2fr;
   border-bottom: 1px #cacaca solid;
 }
 
@@ -279,16 +279,25 @@
   color: #000000;
 }
 
-#main .search-add .add-task-btn {
+#main .search-add .add-task-btn-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: row;
+}
+
+#main .search-add .add-task-btn-div .add-task-btn {
   background-color: #ff503f;
   color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 75%;
-  height: 75%;
+  border-radius: 40%;
+  width: 80%;
+  height: 85%;
   font-size: 12px;
   cursor: pointer;
   margin-top: 0.5rem;
+  padding: 0.5rem;
+  margin-right: 2rem;
 }
 
 #main #unclamp-all-btn,

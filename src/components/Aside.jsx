@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import SettingsPopup from "./SettingsPopup";
 import { withTranslation } from "react-i18next";
 import withFirebaseAuth from "react-with-firebase-auth";
@@ -25,14 +24,16 @@ class Aside extends React.Component {
 
   render() {
     const { t } = this.props;
-    const { stateUser } = this.props;
-    const { user, signOut, signInWithGoogle } = this.props;
+    const { stateUser, activeTaskCount, onAddNewTask } = this.props;
+    const { signOut, signInWithGoogle } = this.props;
+    const {showPopup} = this.state;
 
     return (
       <div id="aside">
         <div className="user-image">
           {stateUser !== null ? (
-            <img src={stateUser.image} />
+            <img src={stateUser.image}
+            alt="Profile" />
           ) : (
             <button
               onClick={signInWithGoogle}
@@ -53,7 +54,7 @@ class Aside extends React.Component {
 
         <a href="#" id="tasks-button">
           <i className="big bars icon current">
-            <div className="active-circle">{this.props.activeTaskCount}</div>
+            <div className="active-circle">{activeTaskCount}</div>
           </i>
           <p>{t("tasks-text")}</p>
         </a>
@@ -75,9 +76,9 @@ class Aside extends React.Component {
           <p>{t("close-text")}</p>
         </a>
 
-        {this.state.showPopup ? (
+        {showPopup ? (
           <SettingsPopup
-            onAddNewTask={this.props.onAddNewTask}
+            onAddNewTask={onAddNewTask}
             closePopup={this.togglePopup.bind(this)}
           />
         ) : null}

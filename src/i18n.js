@@ -27,6 +27,7 @@ i18n.use(LanguageDetector).init({
         "sign-out": "Sign Out",
         "task-creation-date": "Creation Date",
         "task-completion-date": "Completion Date",
+        "addrandomnew-task":"Add Random Task"
       },
     },
     tr: {
@@ -52,6 +53,8 @@ i18n.use(LanguageDetector).init({
         "sign-out": "Çıkış",
         "task-creation-date": "Oluşturulma Tarihi",
         "task-completion-date": "Bitiş Tarihi",
+        "addrandomnew-task":"Rastgele Görev Ekle"
+        
       },
     },
     de: {
@@ -77,6 +80,7 @@ i18n.use(LanguageDetector).init({
         "sign-out": "Ausloggen",
         "task-creation-date": "Erstellungsdatum",
         "task-completion-date": "Fertigstellungstermin",
+        "addrandomnew-task":"Zufällige Aufgabe Hinzufügen"
       },
     },
   },

@@ -7,8 +7,6 @@ class Header extends React.Component {
     this.state = {
       curTime: new Date().toLocaleString(),
     };
-
-    const { t } = this.props;
   }
 
   componentDidMount() {
@@ -21,6 +19,7 @@ class Header extends React.Component {
 
   renderHeaderUp = () => {
     const { t } = this.props;
+    const {curTime} = this.state;
     return (
       <div className="header-upper">
         <i
@@ -32,18 +31,18 @@ class Header extends React.Component {
           className="circular redo icon"
         ></i>
         <p>{t("taskmanagementpanel-text")}</p>
-        <div id="date-time-p">{this.state.curTime}</div>
+        <div id="date-time-p">{curTime}</div>
       </div>
     );
   };
 
   renderHeaderTabButtons = () => {
-    const { t } = this.props;
+    const { t, changeToShow, activeTaskCount } = this.props;
     return (
       <div className="header-buttons">
         <button
           id="all-btn"
-          onClick={this.props.changeToShow}
+          onClick={changeToShow}
           className="header-btn selected"
         >
           <i className="large sign out alternate icon"></i>
@@ -51,16 +50,16 @@ class Header extends React.Component {
         </button>
         <button
           id="active-btn"
-          onClick={this.props.changeToShow}
+          onClick={changeToShow}
           className="header-btn"
         >
-          <div className="active-circle">{this.props.activeTaskCount}</div>
+          <div className="active-circle">{activeTaskCount}</div>
           <i className="large clock outline icon"></i>
           <p>{t("activetasks-text")}</p>
         </button>
         <button
           id="done-btn"
-          onClick={this.props.changeToShow}
+          onClick={changeToShow}
           className="header-btn"
         >
           <i className="large check circle outline icon"></i>

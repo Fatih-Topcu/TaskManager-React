@@ -29,12 +29,15 @@ class Task extends React.Component {
     }
   };
 
-  renderTaskDescription = () => (
-    <p className={`t-${this.props.task.done}`}>{this.props.task.description}</p>
-  );
+  renderTaskDescription = () => {
+    const { task } = this.props;
+
+    return <p className={`t-${task.done}`}>{task.description}</p>;
+  };
 
   renderTaskDates = () => {
     const { t, task } = this.props;
+
     return (
       <div className="task-date">
         <div className="task-creation-date">
@@ -49,23 +52,31 @@ class Task extends React.Component {
     );
   };
 
-  renderTaskStatusCheckbox = () => (
-    <form>
-      <input
-        name="done"
-        type="checkbox"
-        checked={this.props.task.done}
-        onChange={() => this.props.onChangeTaskStatus(this.props.task.id)}
-      />
-    </form>
-  );
+  renderTaskStatusCheckbox = () => {
+    const { task, onChangeTaskStatus } = this.props;
 
-  renderTaskRemoveButton = () => (
-    <i
-      onClick={() => this.props.onRemoveTask(this.props.task.id)}
-      className="circular trash icon trash-button"
-    ></i>
-  );
+    return (
+      <form>
+        <input
+          name="done"
+          type="checkbox"
+          checked={task.done}
+          onChange={() => onChangeTaskStatus(task.id)}
+        />
+      </form>
+    );
+  };
+
+  renderTaskRemoveButton = () => {
+    const { task, onRemoveTask } = this.props;
+
+    return (
+      <i
+        onClick={() => onRemoveTask(task.id)}
+        className="circular trash icon trash-button"
+      ></i>
+    );
+  };
 
   renderTaskExpandButton = () => (
     <i
@@ -75,8 +86,9 @@ class Task extends React.Component {
   );
 
   render() {
+    const {task} = this.props;
     return (
-      <div className="task" id={`task-${this.props.task.id}`}>
+      <div className="task" id={`task-${task.id}`}>
         <div className="task-data">
           {this.renderTaskDescription()}
           {this.renderTaskDates()}

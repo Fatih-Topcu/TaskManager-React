@@ -14,17 +14,19 @@ class AddTaskPopup extends React.Component {
   };
 
   addTaskAndClose = () => {
+    const {taskDescription}  = this.state;
+    const { onAddNewTask, closePopup} = this.props;
     if (
-      this.state.taskDescription !== "" &&
-      /\S/.test(this.state.taskDescription)
+      taskDescription !== "" &&
+      /\S/.test(taskDescription)
     ) {
-      this.props.onAddNewTask(this.state.taskDescription);
-      this.props.closePopup();
+      onAddNewTask(taskDescription);
+      closePopup();
     }
   };
 
   onEnterPressed = (event) => {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       this.addTaskAndClose();
     }
   };
@@ -55,12 +57,12 @@ class AddTaskPopup extends React.Component {
   };
 
   render() {
-    const { t } = this.props;
+    const { closePopup } = this.props;
     return (
       <div className="popup">
         <div className="popup_inner">
           {this.renderAddTaskWindow()}
-          <button id="close-popup-btn" onClick={this.props.closePopup}>
+          <button id="close-popup-btn" onClick={closePopup}>
             <i className="large circular window close icon"></i>
           </button>
         </div>

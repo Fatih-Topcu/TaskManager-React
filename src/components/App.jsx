@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Aside from "./Aside.jsx";
 import Main from "./Main.jsx";
 import Header from "./Header.jsx";
@@ -75,6 +74,13 @@ class App extends React.Component {
 
         document.getElementById("all-btn").classList.add("selected");
       }
+
+      let nextStateTasks = this.state.tasks;
+
+      nextStateTasks.map((el, index) => {
+        el.show = true;
+      });
+      this.setState({tasks : nextStateTasks});
     });
   };
 
@@ -125,23 +131,23 @@ class App extends React.Component {
 
   changeDisplay = () => {
     let filtered = [];
-    const { display } = this.state;
+    const { display, tasks } = this.state;
 
     this.changeSelectedButton();
 
     if (display === "all") {
-      for (let a = 0; a < this.state.tasks.length; a++) {
+      for (let a = 0; a < tasks.length; a++) {
         filtered[a] = true;
       }
     } else if (display === "active") {
-      for (let a = 0; a < this.state.tasks.length; a++) {
-        if (!this.state.tasks[a].done) {
+      for (let a = 0; a < tasks.length; a++) {
+        if (!tasks[a].done) {
           filtered[a] = true;
         }
       }
     } else if (display === "done") {
-      for (let a = 0; a < this.state.tasks.length; a++) {
-        if (this.state.tasks[a].done) {
+      for (let a = 0; a < tasks.length; a++) {
+        if (tasks[a].done) {
           filtered[a] = true;
         }
       }
@@ -151,21 +157,24 @@ class App extends React.Component {
   };
 
   removeTask = (id) => {
-    const newList = this.state.tasks.filter((task) => task.id !== id);
+    const { tasks } = this.state;
+    const newList = tasks.filter((task) => task.id !== id);
     this.setState({ tasks: newList }, () => {
       this.updateFirebase();
     });
   };
 
   removeDoneTasks = () => {
-    const newList = this.state.tasks.filter((task) => task.done !== true);
+    const { tasks } = this.state;
+    const newList = tasks.filter((task) => task.done !== true);
     this.setState({ tasks: newList }, () => {
       this.updateFirebase();
     });
   };
 
   changeTaskStatus = (id) => {
-    let changed = this.state.tasks.filter((task) => task.id === id)[0];
+    const { tasks } = this.state;
+    let changed = tasks.filter((task) => task.id === id)[0];
     changed.done = changed.done ? false : true;
     changed.dateCompleted = changed.done
       ? new Date().toLocaleDateString()
@@ -208,12 +217,13 @@ class App extends React.Component {
   };
 
   addTask = (description) => {
-    let newID = this.state.lastId;
-    newID++;
-    this.setState({ lastId: newID });
-    const disp = this.state.display === "done" ? false : true;
+    let { lastId } = this.state;
+    const { display } = this.state;
+    lastId++;
+    this.setState({ lastId: lastId });
+    const disp = display === "done" ? false : true;
     const newTask = {
-      id: newID,
+      id: lastId,
       show: disp,
       done: false,
       dateCreated: new Date().toLocaleDateString(),
@@ -234,40 +244,35 @@ class App extends React.Component {
   };
 
   updateFirebase = () => {
-    if (this.state.user === null) {
-      const json = JSON.stringify(this.state.tasks);
-      const idJson = JSON.stringify(this.state.lastId);
+    const { user, tasks, lastId } = this.state;
+    if (user === null) {
+      const json = JSON.stringify(tasks);
+      const idJson = JSON.stringify(lastId);
       localStorage.setItem("tasks", json);
       localStorage.setItem("lastid", idJson);
-    } else if (this.state.user.id !== null) {
+    } else if (user.id !== null) {
       let toUpdate = {
-        tasks: this.state.tasks,
-        lastId: this.state.lastId,
+        tasks: tasks,
+        lastId: lastId,
       };
-     
+
       toUpdate = JSON.parse(JSON.stringify(toUpdate));
-      firebase
-        .database()
-        .ref(`users/${this.state.user.id}/state/`)
-        .set(toUpdate);
+      firebase.database().ref(`users/${user.id}/state/`).set(toUpdate);
     }
   };
 
   render() {
- 
+    const { user, tasks } = this.state;
     return (
       <div className="wrapper">
-        <Aside
-          stateUser={this.state.user}
-          activeTaskCount={this.findActiveTaskCount()}
-        />
+        <Aside stateUser={user} activeTaskCount={this.findActiveTaskCount()} />
         <Header
           changeToShow={this.changeToShow}
           activeTaskCount={this.findActiveTaskCount()}
         />
         <Main
           ref={(main) => (this.main = main)}
-          tasks={this.state.tasks}
+          tasks={tasks}
           onRemoveTask={this.removeTask}
           onRemoveDoneTasks={this.removeDoneTasks}
           onChangeTaskStatus={this.changeTaskStatus}
