@@ -265,7 +265,7 @@ class App extends React.Component {
     const { user, tasks } = this.state;
     return (
       <div className="wrapper">
-        <Aside stateUser={user} activeTaskCount={this.findActiveTaskCount()} />
+        <Aside stateUser={user} taskCount={tasks.length} />
         <Header
           changeToShow={this.changeToShow}
           activeTaskCount={this.findActiveTaskCount()}

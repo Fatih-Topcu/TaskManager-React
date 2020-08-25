@@ -24,7 +24,7 @@ class Aside extends React.Component {
 
   render() {
     const { t } = this.props;
-    const { stateUser, activeTaskCount, onAddNewTask } = this.props;
+    const { stateUser, taskCount, onAddNewTask } = this.props;
     const { signOut, signInWithGoogle } = this.props;
     const {showPopup} = this.state;
 
@@ -54,7 +54,7 @@ class Aside extends React.Component {
 
         <a href="#" id="tasks-button">
           <i className="big bars icon current">
-            <div className="active-circle">{activeTaskCount}</div>
+            <div className="active-circle">{taskCount}</div>
           </i>
           <p>{t("tasks-text")}</p>
         </a>

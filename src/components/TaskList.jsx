@@ -1,5 +1,7 @@
 import React from "react";
 import Task from "./Task.jsx";
+import Loader from "./Loader";
+import { withTranslation } from "react-i18next";
 
 class TaskList extends React.Component {
   renderTask = (task) => {
@@ -24,12 +26,19 @@ class TaskList extends React.Component {
   };
 
   render() {
+    const { t, tasks } = this.props;
     return (
-      <div id="tasklist">
-        <ul className="ul-list">{this.renderList()}</ul>
+      <div>
+        {tasks.length > 1 ? (
+          <div id="tasklist">
+            <ul className="ul-list">{this.renderList()}</ul>
+          </div>
+        ) : (
+         <Loader />
+        )}
       </div>
     );
   }
 }
 
-export default TaskList;
+export default (TaskList);
