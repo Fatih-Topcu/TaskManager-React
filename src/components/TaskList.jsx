@@ -4,6 +4,13 @@ import Loader from "./Loader";
 import { withTranslation } from "react-i18next";
 
 class TaskList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loaderActive: false,
+    };
+  }
+
   renderTask = (task) => {
     const { onRemoveTask, onChangeTaskStatus } = this.props;
     return (
@@ -25,20 +32,27 @@ class TaskList extends React.Component {
     });
   };
 
+  componentDidMount = () => {
+    this.setState({ loaderActive: true });
+    setTimeout(() => {
+      this.setState({ loaderActive: false });
+    }, 2000);
+  };
+
   render() {
-    const { t, tasks } = this.props;
+    const { loaderActive } = this.state;
     return (
       <div>
-        {tasks.length > 1 ? (
+        {!loaderActive ? (
           <div id="tasklist">
             <ul className="ul-list">{this.renderList()}</ul>
           </div>
         ) : (
-         <Loader />
+          <Loader />
         )}
       </div>
     );
   }
 }
 
-export default (TaskList);
+export default TaskList;
