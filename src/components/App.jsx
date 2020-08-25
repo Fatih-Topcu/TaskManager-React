@@ -17,7 +17,6 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.resetHeaderButtons();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState(
@@ -34,7 +33,7 @@ class App extends React.Component {
               "value",
               (snapshot) => {
                 const newState = snapshot.val();
-                this.setState(newState);
+                this.setState(newState, () => this.resetHeaderButtons());
               }
             );
           }
@@ -77,10 +76,10 @@ class App extends React.Component {
 
       let nextStateTasks = this.state.tasks;
 
-      nextStateTasks.map((el, index) => {
+      nextStateTasks.map((el) => {
         el.show = true;
       });
-      this.setState({tasks : nextStateTasks});
+      this.setState({ tasks: nextStateTasks });
     });
   };
 

@@ -3,8 +3,8 @@ import { withTranslation } from "react-i18next";
 
 const Loader = ({ t }) => {
   return (
-    <div id="loader-div" class="ui segment">
-      <div class="ui active indeterminate huge inline text loader">
+    <div id="loader-div" className="ui segment">
+      <div className="ui active indeterminate huge inline text loader">
         {t("loading-text")}
       </div>
     </div>
