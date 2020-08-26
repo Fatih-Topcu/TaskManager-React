@@ -84,12 +84,12 @@ class Main extends React.Component {
   };
 
   addRandomTask = () => {
-    const randomTextSize = Math.floor(Math.random() * 4) + 1;
+    const randomTextSize = Math.floor(Math.random() * 3) + 1;
 
     axios
-      .get(`https://cors-anywhere.herokuapp.com/https://loripsum.net/api/${randomTextSize}`)
+      .get(`https://litipsum.com/api/${randomTextSize}`)
       .then((response) => {
-        this.props.onAddNewTask( response.data.replace(/<p>/g, "").replace(/<\/p>/g, ""));
+        this.props.onAddNewTask(response.data);
       })
       .catch((error) => {
         console.log(error);

@@ -29,8 +29,8 @@ $header-background: #f1f1f1;
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family:'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 .wrapper {
@@ -86,7 +86,7 @@ $header-background: #f1f1f1;
 
       .active-circle {
         position: relative;
-        top: -30px;
+        top: -40px;
         left: 20px;
         color: $aside-dark-grey;
         background-color: #cacacaca;

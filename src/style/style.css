@@ -19,7 +19,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 .wrapper {
@@ -98,7 +99,7 @@
 
 #aside a i .active-circle {
   position: relative;
-  top: -30px;
+  top: -40px;
   left: 20px;
   color: #353a3e;
   background-color: #cacacaca;

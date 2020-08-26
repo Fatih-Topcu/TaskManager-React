@@ -19,7 +19,7 @@ class Header extends React.Component {
 
   renderHeaderUp = () => {
     const { t } = this.props;
-    const {curTime} = this.state;
+    const { curTime } = this.state;
     return (
       <div className="header-upper">
         <i
@@ -45,23 +45,15 @@ class Header extends React.Component {
           onClick={changeToShow}
           className="header-btn selected"
         >
-          <i className="large sign out alternate icon"></i>
+          <i className="large tasks icon"></i>
           <p>{t("alltasks-text")}</p>
         </button>
-        <button
-          id="active-btn"
-          onClick={changeToShow}
-          className="header-btn"
-        >
+        <button id="active-btn" onClick={changeToShow} className="header-btn">
           <div className="active-circle">{activeTaskCount}</div>
           <i className="large clock outline icon"></i>
           <p>{t("activetasks-text")}</p>
         </button>
-        <button
-          id="done-btn"
-          onClick={changeToShow}
-          className="header-btn"
-        >
+        <button id="done-btn" onClick={changeToShow} className="header-btn">
           <i className="large check circle outline icon"></i>
           <p>{t("donetasks-text")}</p>
         </button>
