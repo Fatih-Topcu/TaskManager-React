@@ -18,9 +18,11 @@ $header-background: #f1f1f1;
     margin: 0 0.25rem !important;
   }
 
-  .active-circle {
-    left: 0rem !important;
-    top: -1rem !important;
+  #header {
+    .active-circle {
+      left: 0rem !important;
+      top: -1rem !important;
+    }
   }
 }
 
@@ -33,7 +35,7 @@ $header-background: #f1f1f1;
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: 1fr 10fr 2fr;
   grid-template-rows: 5fr 30fr 5fr;
   align-items: stretch;
   grid-template-areas: "sidebar header header" "sidebar main ." "sidebar . .";
@@ -45,29 +47,26 @@ $header-background: #f1f1f1;
   align-items: center;
   grid-area: sidebar;
   background-color: $aside-dark-grey;
-  padding-top: 2rem;
 
   .user-image {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
     text-align: center;
 
-    p,
-    img {
-      margin: auto;
-    }
+  
 
     img {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 10%;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
     }
 
     p {
-      margin-top: 0.5rem;
-      color: $orange-main;
+      margin-top: 1rem;
+      color: $header-background;
       font-size: 1.25rem;
     }
+    
   }
 
   a {
@@ -76,6 +75,7 @@ $header-background: #f1f1f1;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+
     p {
       padding: 0.5rem 0;
       font-size: 12px;
@@ -83,6 +83,7 @@ $header-background: #f1f1f1;
     }
     i {
       color: $aside-donetask-p-grey;
+
       .active-circle {
         position: relative;
         top: -30px;
@@ -99,16 +100,28 @@ $header-background: #f1f1f1;
   }
   #close-app-btn {
     margin-top: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
   }
   a:hover {
     p,
     i {
       color: $orange-main;
+      transform: scale(1.25);
     }
   }
   .current {
     color: $orange-main;
+  }
+
+  #logout-button,
+  #login-button {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: $header-background;
+      color: $orange-main;
+      transform: scale(1.25);
+    }
   }
 }
 
@@ -149,13 +162,19 @@ $header-background: #f1f1f1;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      border: 0.2px solid grey;
       height: 4rem;
       width: 20rem;
       cursor: pointer;
       outline: none;
+      border: none;
+
+      border-right: 0.2px $light-grey solid;
+      border-left: 0.2px $light-grey solid;
       i {
         color: $light-grey;
+      }
+      p {
+        color: $aside-donetask-p-grey;
       }
       .active-circle {
         position: relative;
@@ -173,7 +192,8 @@ $header-background: #f1f1f1;
     .header-btn.selected {
       background-color: #fff;
       border-bottom: none;
-      i {
+      i,
+      p {
         color: $orange-main;
       }
     }
@@ -194,6 +214,7 @@ $header-background: #f1f1f1;
   .search-add {
     display: grid;
     grid-template-columns: 6fr 2fr;
+
     .task-search {
       input {
         width: 60vw;
@@ -215,17 +236,24 @@ $header-background: #f1f1f1;
       float: row;
 
       .add-task-btn {
+        transition: all 0.3s ease-in-out;
         background-color: $orange-main;
         color: #fff;
         border: none;
-        border-radius: 40%;
-        width: 80%;
-        height: 85%;
+        border-radius: 20%;
         font-size: 12px;
         cursor: pointer;
         margin-top: 0.5rem;
         padding: 0.5rem;
         margin-right: 2rem;
+        margin-bottom: 1rem;
+        outline: none;
+
+        &:hover {
+          background: $aside-dark-grey;
+          color: $orange-main;
+          transform: scale(1.1);
+        }
       }
     }
 
@@ -233,6 +261,7 @@ $header-background: #f1f1f1;
   }
   #unclamp-all-btn,
   #clamp-all-btn {
+    transition: all 0.3s ease-in-out;
     float: right;
     margin-right: 4rem;
     margin-top: 1rem;
@@ -246,15 +275,17 @@ $header-background: #f1f1f1;
     }
 
     &:hover {
-      color: #000;
-      font-size: 16px;
+      color: $aside-dark-grey;
+      transform: scale(1.15);
     }
   }
 
   #remove-done-btn {
+    transition: all 0.3s ease-in-out;
     float: right;
     margin-right: 1.25rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     color: $orange-main;
     background-color: #fff;
     border: none;
@@ -266,8 +297,8 @@ $header-background: #f1f1f1;
     }
 
     &:hover {
-      color: #000;
-      font-size: 16px;
+      color: $aside-dark-grey;
+      transform: scale(1.1);
     }
   }
 
@@ -409,13 +440,12 @@ $header-background: #f1f1f1;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.2);
 
-  :first-child{
+  :first-child {
     left: 50%;
     top: 50%;
     color: $orange-main;
     align-self: center;
   }
-
 }
 
 .popup {

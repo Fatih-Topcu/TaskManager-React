@@ -38,6 +38,7 @@ class Aside extends React.Component {
             <button
               onClick={signInWithGoogle}
               className="ui google plus button"
+              id="login-button"
             >
               <i className="google icon"></i>
               {t("sign-in")}
@@ -46,7 +47,7 @@ class Aside extends React.Component {
 
           {stateUser ? <p>{stateUser.name}</p> : null}
           {stateUser ? (
-            <button className="ui tiny google plus button" onClick={signOut}>
+            <button id="logout-button" className="ui tiny google plus button" onClick={signOut}>
               {t("sign-out")}
             </button>
           ) : null}
