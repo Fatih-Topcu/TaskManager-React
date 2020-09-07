@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/TaskManager-React/static/css/main.2009cf70.chunk.css",
+    "main.css": "/TaskManager-React/static/css/main.705b59be.chunk.css",
     "main.js": "/TaskManager-React/static/js/main.e6f40bba.chunk.js",
     "main.js.map": "/TaskManager-React/static/js/main.e6f40bba.chunk.js.map",
     "runtime-main.js": "/TaskManager-React/static/js/runtime-main.0992c9d7.js",
@@ -8,16 +8,16 @@
     "static/js/2.fa9b17bb.chunk.js": "/TaskManager-React/static/js/2.fa9b17bb.chunk.js",
     "static/js/2.fa9b17bb.chunk.js.map": "/TaskManager-React/static/js/2.fa9b17bb.chunk.js.map",
     "index.html": "/TaskManager-React/index.html",
-    "precache-manifest.19c387ba497ad85d0f958b7fdcc7790b.js": "/TaskManager-React/precache-manifest.19c387ba497ad85d0f958b7fdcc7790b.js",
+    "precache-manifest.b441dc3c492f8ebdb5b10f37ad481c32.js": "/TaskManager-React/precache-manifest.b441dc3c492f8ebdb5b10f37ad481c32.js",
     "service-worker.js": "/TaskManager-React/service-worker.js",
-    "static/css/main.2009cf70.chunk.css.map": "/TaskManager-React/static/css/main.2009cf70.chunk.css.map",
+    "static/css/main.705b59be.chunk.css.map": "/TaskManager-React/static/css/main.705b59be.chunk.css.map",
     "static/js/2.fa9b17bb.chunk.js.LICENSE.txt": "/TaskManager-React/static/js/2.fa9b17bb.chunk.js.LICENSE.txt",
     "static/media/turkey.png": "/TaskManager-React/static/media/turkey.988bf7eb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0992c9d7.js",
     "static/js/2.fa9b17bb.chunk.js",
-    "static/css/main.2009cf70.chunk.css",
+    "static/css/main.705b59be.chunk.css",
     "static/js/main.e6f40bba.chunk.js"
   ]
 }
